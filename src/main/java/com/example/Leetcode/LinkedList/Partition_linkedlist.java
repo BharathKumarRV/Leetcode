@@ -1,6 +1,8 @@
 package com.example.Leetcode.LinkedList;
 
-public class LinkedList {
+import com.example.Leetcode.LinkedList.LinkedList.ListNode;
+
+public class Partition_linkedlist {
 
 	ListNode head;
 
@@ -15,7 +17,7 @@ public class LinkedList {
 	}
 
 	// Method to insert a new node
-	public static LinkedList insert(LinkedList list, int data) {
+	public static Partition_linkedlist insert(Partition_linkedlist list, int data) {
 		// Create a new node with given data
 		ListNode new_node = new ListNode(data);
 		new_node.next = null;
@@ -40,26 +42,7 @@ public class LinkedList {
 		return list;
 	}
 
-	public static void removeNthFromEnd(LinkedList list, int n) {
-
-		ListNode head = list.head;
-		ListNode start = new ListNode(0);
-		start.next = head;
-		ListNode slow = start, fast = start;
-
-		// Move fast in front so that the gap between slow and fast becomes n
-		for (int i = 1; i <= n + 1; i++) {
-			fast = fast.next;
-		} // Move fast to the end, maintaining the gap the desired node
-		while (fast != null) {
-			slow = slow.next;
-			fast = fast.next;
-		} // Skip
-		slow.next = slow.next.next;
-		// return start.next;
-	}
-
-	public static void printList(LinkedList list) {
+	public static void printList(Partition_linkedlist list) {
 		ListNode currNode = list.head;
 
 		System.out.print("LinkedList: ");
@@ -74,33 +57,35 @@ public class LinkedList {
 		}
 	}
 
+	public static ListNode partition(ListNode head, int x) {
+		ListNode smallerHead = new ListNode(0), biggerHead = new ListNode(0);
+		ListNode smaller = smallerHead, bigger = biggerHead;
+		while (head != null) {
+			if (head.val < x) {
+				smaller = smaller.next = head;
+			} else {
+				bigger = bigger.next = head;
+			}
+			head = head.next;
+		}
+		// no need for extra check because of fake heads
+		smaller.next = biggerHead.next; // smaller will be at the end of the list, biggerHead will be at the beginning of bigger list
+		bigger.next = null; // cut off anything after bigger
+		return smallerHead.next; //smallerHead will the beginning of the smaller list
+	}
+
 	public static void main(String[] args) {
 		/* Start with the empty list. */
-		LinkedList list = new LinkedList();
-
-		//
-		// ******INSERTION******
-		//
-
-		// Insert the values
-
+		Partition_linkedlist list = new Partition_linkedlist();
 		list = insert(list, 1);
-		list = insert(list, 2);
-		list = insert(list, 3);
 		list = insert(list, 4);
+		list = insert(list, 3);
+		list = insert(list, 2);
 		list = insert(list, 5);
-		list = insert(list, 6);
-		list = insert(list, 7);
-		list = insert(list, 8);
-
-		/*
-		 * insert(list, 1); insert(list, 2); insert(list, 3); insert(list, 4);
-		 * insert(list, 5); insert(list, 6); insert(list, 7); insert(list, 8);
-		 */
-
-		// Print the LinkedList
+		list = insert(list, 2);
 		printList(list);
-		removeNthFromEnd(list, 2);
+		ListNode head = list.head;
+		partition(head, 3);
 		printList(list);
 	}
 

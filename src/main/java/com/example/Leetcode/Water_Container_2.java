@@ -1,6 +1,6 @@
 package com.example.Leetcode;
 
-public class WaterContainer {
+public class Water_Container_2 {
 
 	public int maxArea(int[] heights) {
 
@@ -11,14 +11,8 @@ public class WaterContainer {
 		int minHeight = 0;
 
 		while (left < right) {
-			// because the length is always decreasing
-			// we only need to consider a pair if its height
-			// is greater than any pair's height we've used so far
-			if (heights[left] > minHeight && heights[right] > minHeight) {
-				minHeight = Math.min(heights[left], heights[right]);
-				maxArea = Math.max(maxArea, minHeight * (right - left));
-			}
-
+			minHeight = Math.min(heights[left], heights[right]);
+			maxArea = Math.max(maxArea, minHeight * (right - left));
 			// move pointers
 			if (heights[left] == heights[right]) {
 				left++;

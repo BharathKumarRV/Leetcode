@@ -1,6 +1,8 @@
 package com.example.Leetcode.LinkedList;
 
-public class LinkedList {
+import com.example.Leetcode.LinkedList.Delete_duplicates_2.ListNode;
+
+public class Delete_duplicates_2 {
 
 	ListNode head;
 
@@ -13,9 +15,8 @@ public class LinkedList {
 		}
 
 	}
-
-	// Method to insert a new node
-	public static LinkedList insert(LinkedList list, int data) {
+	
+	public static Delete_duplicates_2 insert(Delete_duplicates_2 list, int data) {
 		// Create a new node with given data
 		ListNode new_node = new ListNode(data);
 		new_node.next = null;
@@ -39,27 +40,29 @@ public class LinkedList {
 		// Return the list by head
 		return list;
 	}
-
-	public static void removeNthFromEnd(LinkedList list, int n) {
-
-		ListNode head = list.head;
-		ListNode start = new ListNode(0);
-		start.next = head;
-		ListNode slow = start, fast = start;
-
-		// Move fast in front so that the gap between slow and fast becomes n
-		for (int i = 1; i <= n + 1; i++) {
-			fast = fast.next;
-		} // Move fast to the end, maintaining the gap the desired node
-		while (fast != null) {
-			slow = slow.next;
-			fast = fast.next;
-		} // Skip
-		slow.next = slow.next.next;
-		// return start.next;
-	}
-
-	public static void printList(LinkedList list) {
+	
+	public static ListNode deleteDuplicates(ListNode head) {
+        if(head==null) return null;
+        ListNode FakeHead=new ListNode(0);
+        FakeHead.next=head;
+        ListNode pre=FakeHead;
+        ListNode cur=head;
+        while(cur!=null){
+            while(cur.next!=null&&cur.val==cur.next.val){
+                cur=cur.next;
+            }
+            if(pre.next==cur){
+                pre=pre.next;
+            }
+            else{
+                pre.next=cur.next;
+            }
+            cur=cur.next;
+        }
+        return FakeHead.next;
+    }
+	
+	public static void printList(Delete_duplicates_2 list) {
 		ListNode currNode = list.head;
 
 		System.out.print("LinkedList: ");
@@ -73,35 +76,21 @@ public class LinkedList {
 			currNode = currNode.next;
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		/* Start with the empty list. */
-		LinkedList list = new LinkedList();
-
-		//
-		// ******INSERTION******
-		//
-
-		// Insert the values
-
+		Delete_duplicates_2 list = new Delete_duplicates_2();
+		list = insert(list, 1);
 		list = insert(list, 1);
 		list = insert(list, 2);
 		list = insert(list, 3);
+		list = insert(list, 3);
 		list = insert(list, 4);
-		list = insert(list, 5);
-		list = insert(list, 6);
-		list = insert(list, 7);
-		list = insert(list, 8);
-
-		/*
-		 * insert(list, 1); insert(list, 2); insert(list, 3); insert(list, 4);
-		 * insert(list, 5); insert(list, 6); insert(list, 7); insert(list, 8);
-		 */
-
-		// Print the LinkedList
 		printList(list);
-		removeNthFromEnd(list, 2);
+		ListNode head = list.head;
+		ListNode res = deleteDuplicates(head);
+		list.head=res;
 		printList(list);
 	}
-
+	
 }

@@ -1,6 +1,6 @@
 package com.example.Leetcode.LinkedList;
 
-public class LinkedList {
+public class Reverse_linkedlist {
 
 	ListNode head;
 
@@ -15,7 +15,7 @@ public class LinkedList {
 	}
 
 	// Method to insert a new node
-	public static LinkedList insert(LinkedList list, int data) {
+	public static Reverse_linkedlist insert(Reverse_linkedlist list, int data) {
 		// Create a new node with given data
 		ListNode new_node = new ListNode(data);
 		new_node.next = null;
@@ -39,32 +39,13 @@ public class LinkedList {
 		// Return the list by head
 		return list;
 	}
-
-	public static void removeNthFromEnd(LinkedList list, int n) {
-
-		ListNode head = list.head;
-		ListNode start = new ListNode(0);
-		start.next = head;
-		ListNode slow = start, fast = start;
-
-		// Move fast in front so that the gap between slow and fast becomes n
-		for (int i = 1; i <= n + 1; i++) {
-			fast = fast.next;
-		} // Move fast to the end, maintaining the gap the desired node
-		while (fast != null) {
-			slow = slow.next;
-			fast = fast.next;
-		} // Skip
-		slow.next = slow.next.next;
-		// return start.next;
-	}
-
-	public static void printList(LinkedList list) {
+	
+	public static void printList(Reverse_linkedlist list) {
 		ListNode currNode = list.head;
 
-		System.out.print("LinkedList: ");
+		System.out.print("Reverse_linkedlist: ");
 
-		// Traverse through the LinkedList
+		// Traverse through the Reverse_linkedlist
 		while (currNode != null) {
 			// Print the data at current node
 			System.out.print(currNode.val + " ");
@@ -73,10 +54,22 @@ public class LinkedList {
 			currNode = currNode.next;
 		}
 	}
-
+	
+	public static ListNode reverse(ListNode head) {
+		ListNode prev=null;
+		
+		while(head!=null) {
+			ListNode next_node=head.next;
+		    head.next=prev;
+		    prev=head;
+		    head=next_node;
+		}
+		return prev;
+	}
+	
 	public static void main(String[] args) {
 		/* Start with the empty list. */
-		LinkedList list = new LinkedList();
+		Reverse_linkedlist list = new Reverse_linkedlist();
 
 		//
 		// ******INSERTION******
@@ -89,19 +82,19 @@ public class LinkedList {
 		list = insert(list, 3);
 		list = insert(list, 4);
 		list = insert(list, 5);
-		list = insert(list, 6);
-		list = insert(list, 7);
-		list = insert(list, 8);
 
 		/*
 		 * insert(list, 1); insert(list, 2); insert(list, 3); insert(list, 4);
 		 * insert(list, 5); insert(list, 6); insert(list, 7); insert(list, 8);
 		 */
 
-		// Print the LinkedList
+		// Print the Reverse_linkedlist
 		printList(list);
-		removeNthFromEnd(list, 2);
+		ListNode head=list.head;
+		ListNode new_head=reverse(head);
+		list.head=new_head;
 		printList(list);
 	}
-
+	
+	
 }

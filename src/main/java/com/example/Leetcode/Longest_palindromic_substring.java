@@ -18,11 +18,12 @@ public class Longest_palindromic_substring {
 
 	private void extendPalindrome(String s, int j, int k) {
 		while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {
-			j--;
+			j--; 
 			k++;
 		}
+		//lo is the index of palindromic string, and the maxlen is the length of palindromic string
 		if (maxLen < k - j - 1) {
-			lo = j + 1;
+			lo = j + 1; //Since while loop breaks after j-- it requires lo index to start with j+1.
 			maxLen = k - j - 1;
 		}
 	}
