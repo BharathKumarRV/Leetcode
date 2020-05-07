@@ -13,7 +13,7 @@ public class Sudoko_Solver {
 	 * '.', '.', '1' }, { '7', '.', '.', '.', '2', '.', '.', '.', '6' }, { '.', '6',
 	 * '.', '.', '.', '.', '2', '8', '.' }, { '.', '.', '.', '4', '1', '9', '.',
 	 * '.', '5' }, { '.', '.', '.', '.', '8', '.', '.', '7', '9' } };
-	 * solveSudoku(board); //System.out.println(res);
+	 * solveSudoku(board); // System.out.println(res);
 	 * 
 	 * }
 	 */
@@ -22,7 +22,7 @@ public class Sudoko_Solver {
 
 		if (board == null || board.length == 0)
 			return;
-		boolean res=solve(board);
+		boolean res = solve(board);
 		System.out.println(res);
 	}
 
@@ -33,7 +33,7 @@ public class Sudoko_Solver {
 					for (char c = '1'; c <= '9'; c++) {// trial. Try 1 through 9
 						if (isValid(board, i, j, c)) {
 							board[i][j] = c; // Put c for this cell
-							//We dont know if the above c value is correct
+							// We dont know if the above c value is correct
 							if (solve(board))
 								return true; // If it's the solution return true
 							else
@@ -47,12 +47,16 @@ public class Sudoko_Solver {
 		}
 		return true;
 	}
-	
-	/*blkrow = (row / 3) * 3 // Multiplying by 3 because we need to move to the next block
+
+	/*
+	 * blkrow = (row / 3) * 3 // Multiplying by 3 because we need to move to the
+	 * next block
 	 * 
-	 * board[blkrow + i / 3] // Dividing i by 3 as we have to move one step down in block
+	 * board[blkrow + i / 3] // Dividing i by 3 as we have to move one step down in
+	 * block
 	 * 
-	 * board[blkcol + i % 3] // Modulous i by 3 as we have to advance one column towards right in block
+	 * board[blkcol + i % 3] // Modulous i by 3 as we have to advance one column
+	 * towards right in block
 	 * 
 	 */
 
