@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 
 public class Sudoko_Solver {
 
+	
 	/*
 	 * public static void main(String[] args) {
 	 * SpringApplication.run(LeetcodeApplication.class, args); char[][] board = { {
@@ -17,6 +18,7 @@ public class Sudoko_Solver {
 	 * 
 	 * }
 	 */
+	 
 
 	public static void solveSudoku(char[][] board) {
 
