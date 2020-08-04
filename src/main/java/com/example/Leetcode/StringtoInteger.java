@@ -1,8 +1,17 @@
 package com.example.Leetcode;
 
+import org.springframework.boot.SpringApplication;
+
 public class StringtoInteger {
 
-	public int myAtoi(String str) {
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int res = myAtoi("   -42");
+		System.out.println(res);
+
+	}
+
+	public static int myAtoi(String str) {
 
 		str = str.trim();
 		if (str.isEmpty())

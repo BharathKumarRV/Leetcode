@@ -8,31 +8,35 @@ import org.springframework.boot.SpringApplication;
 
 public class Combination_Sum2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int[] nums = { 2, 3,
-	 * 6, 7 }; List<List<Integer>> res; res = combinationSum(nums, 7);
-	 * System.out.println(res); }
-	 */
-
-	public static List<List<Integer>> combinationSum(int[] nums, int target) {
-		List<List<Integer>> list = new ArrayList<>();
-		Arrays.sort(nums);
-		backtrack(list, new ArrayList<>(), nums, target, 0);
-		return list;
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int[] nums = { 10, 1, 2, 7, 6, 1, 5 };
+		List<List<Integer>> res;
+		res = combinationSum2(nums, 8);
+		System.out.println(res);
 	}
 
-	private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start) {
-		if (remain < 0)
+	public static List<List<Integer>> combinationSum2(int[] nums, int target) {
+		Arrays.sort(nums);
+		List<List<Integer>> res = new ArrayList<List<Integer>>();
+		List<Integer> path = new ArrayList<Integer>();
+		dfs_com(nums, 0, target, path, res);
+		return res;
+	}
+
+	static void dfs_com(int[] nums, int cur, int target, List<Integer> path, List<List<Integer>> res) {
+		if (target == 0) {
+			res.add(new ArrayList(path));
 			return;
-		else if (remain == 0)
-			list.add(new ArrayList<>(tempList));
-		else {
-			for (int i = start; i < nums.length && nums[i] <= remain; i++) {
-				tempList.add(nums[i]);
-				backtrack(list, tempList, nums, remain - nums[i], i+1); // not i + 1 because we can reuse same elements
-				tempList.remove(tempList.size() - 1);
-			}
+		}
+		if (target < 0)
+			return;
+		for (int i = cur; i < nums.length; i++) {
+			if (i > cur && nums[i] == nums[i - 1])
+				continue;
+			path.add(path.size(), nums[i]);
+			dfs_com(nums, i + 1, target - nums[i], path, res);
+			path.remove(path.size() - 1);
 		}
 	}
 }

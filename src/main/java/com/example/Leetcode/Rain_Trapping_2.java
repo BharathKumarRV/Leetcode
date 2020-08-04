@@ -4,14 +4,14 @@ import org.springframework.boot.SpringApplication;
 
 public class Rain_Trapping_2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int[] nums =
-	 * {0,1,0,2,1,0,1,3,2,1,2,1}; int res; res = trap(nums);
-	 * System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int[] nums = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
+		int res;
+		res = trap(nums);
+		System.out.println(res);
+
+	}
 
 	public static int trap(int[] A) {
 

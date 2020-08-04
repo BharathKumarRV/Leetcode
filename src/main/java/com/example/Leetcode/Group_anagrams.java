@@ -10,14 +10,13 @@ import org.springframework.boot.SpringApplication;
 
 public class Group_anagrams {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); String str[] = {
-	 * "eat", "tea", "tan", "ate", "nat", "bat" }; List<List<String>> res =
-	 * groupAnagrams(str); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String str[] = { "eat", "tea", "tan", "ate", "nat", "bat" };
+		List<List<String>> res = groupAnagrams(str);
+		System.out.println(res);
+
+	}
 
 	public static List<List<String>> groupAnagrams(String[] strs) {
 		if (strs == null || strs.length == 0)

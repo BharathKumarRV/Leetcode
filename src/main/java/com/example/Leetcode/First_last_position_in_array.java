@@ -4,14 +4,13 @@ import org.springframework.boot.SpringApplication;
 
 public class First_last_position_in_array {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int[] nums =
-	 * {5,7,7,8,8,10}; int res[] = searchRange(nums, 8);
-	 * System.out.println(res[0]+" "+res[1]);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int[] nums = { 5, 7, 7, 8, 8, 10 };
+		int res[] = searchRange(nums, 8);
+		System.out.println(res[0] + " " + res[1]);
+
+	}
 
 	public static int[] searchRange(int[] A, int target) {
 

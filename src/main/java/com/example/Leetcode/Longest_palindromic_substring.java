@@ -1,10 +1,19 @@
 package com.example.Leetcode;
 
+import org.springframework.boot.SpringApplication;
+
 public class Longest_palindromic_substring {
 
-	int lo = 0, maxLen = 0;
+	static int lo = 0, maxLen = 0;
 
-	public String longestPalindrome(String s) {
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String res = longestPalindrome("babad");
+		System.out.println(res);
+
+	}
+	
+	public static String longestPalindrome(String s) {
 		int len = s.length();
 		if (len < 2)
 			return s;
@@ -16,7 +25,7 @@ public class Longest_palindromic_substring {
 		return s.substring(lo, lo + maxLen);
 	}
 
-	private void extendPalindrome(String s, int j, int k) {
+	private static void extendPalindrome(String s, int j, int k) {
 		while (j >= 0 && k < s.length() && s.charAt(j) == s.charAt(k)) {
 			j--; 
 			k++;

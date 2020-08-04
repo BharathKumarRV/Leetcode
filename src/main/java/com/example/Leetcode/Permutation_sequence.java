@@ -7,13 +7,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Permutation_sequence {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); String res =
-	 * getPermutation(3, 4); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String res = getPermutation(3, 4);
+		System.out.println(res);
+
+	}
 
 	public static String getPermutation(int n, int k) {
 		int pos = 0;

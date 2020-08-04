@@ -1,8 +1,18 @@
 package com.example.Leetcode;
 
+import org.springframework.boot.SpringApplication;
+
 public class WaterContainer {
 
-	public int maxArea(int[] heights) {
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int[] heights = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+		int res = maxArea(heights);
+		System.out.println(res);
+
+	}
+
+	public static int maxArea(int[] heights) {
 
 		int maxArea = 0;
 		int left = 0;

@@ -4,9 +4,19 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.boot.SpringApplication;
+
 public class Threesum {
 
-	public List<List<Integer>> threeSum(int[] num) {
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int num[] = { -1, 0, 1, 2, -1, -4 };
+		List<List<Integer>> res = threeSum(num);
+		System.out.println(res);
+
+	}
+
+	public static List<List<Integer>> threeSum(int[] num) {
 
 		Arrays.sort(num);
 		List<List<Integer>> res = new LinkedList<>();

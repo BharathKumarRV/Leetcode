@@ -4,13 +4,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Next_Permutation {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int num[] = {3,2,1};
-	 * nextPermutation(num);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int num[] = { 3, 2, 1 };
+		nextPermutation(num);
+
+	}
 
 	public static void nextPermutation(int[] num) {
 		int n = num.length;

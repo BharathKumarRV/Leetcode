@@ -8,16 +8,18 @@ import org.springframework.boot.SpringApplication;
 
 public class Combination_Sum {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int[] nums = { 2, 3,
-	 * 6, 7 }; List<List<Integer>> res; res = combinationSum(nums, 7);
-	 * System.out.println(res); }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int[] nums = { 2, 3, 4, 5 };
+		List<List<Integer>> res;
+		res = combinationSum(nums, 5);
+		System.out.println(res);
+	}
 
 	public static List<List<Integer>> combinationSum(int[] nums, int target) {
 		List<List<Integer>> list = new ArrayList<>();
-		Arrays.sort(nums);
+		Arrays.sort(nums); // sort is needed as we can be sure that if nums[i]>remain then nums[j]>remain
+							// where j>i
 		backtrack(list, new ArrayList<>(), nums, target, 0);
 		return list;
 	}
@@ -28,7 +30,9 @@ public class Combination_Sum {
 		else if (remain == 0)
 			list.add(new ArrayList<>(tempList));
 		else {
-			for (int i = start; i < nums.length && nums[i] <= remain; i++) {
+			for (int i = start; i < nums.length; i++) {
+				if (nums[i] > remain) // sort can be usefull here
+					return;
 				tempList.add(nums[i]);
 				backtrack(list, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same elements
 				tempList.remove(tempList.size() - 1);

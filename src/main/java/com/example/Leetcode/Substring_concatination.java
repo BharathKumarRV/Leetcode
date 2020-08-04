@@ -9,24 +9,23 @@ import org.springframework.boot.SpringApplication;
 
 public class Substring_concatination {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); LeetcodeApplication
-	 * la = new LeetcodeApplication(); String s = "barfoothemanfoobar"; String str[]
-	 * = { "foo", "bar" }; List<Integer> res = la.findSubstring(s, str);
-	 * System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String s = "barfoothemanfoobar";
+		String str[] = { "foo", "bar" };
+		List<Integer> res = findSubstring(s, str);
+		System.out.println(res);
 
-	public List<Integer> findSubstring(String s, String[] words) {
+	}
+
+	public static List<Integer> findSubstring(String s, String[] words) {
 		final Map<String, Integer> counts = new HashMap<>();
 		for (final String word : words) {
 			counts.put(word, counts.getOrDefault(word, 0) + 1);
 		}
 		final List<Integer> indexes = new ArrayList<>();
 		final int n = s.length(), num = words.length, len = words[0].length();
-		for (int i = 0; i <= n - num * len; i++) {
+		for (int i = 0; i < n - num * len + 1; i++) {
 			final Map<String, Integer> seen = new HashMap<>();
 			int j = 0;
 			while (j < num) {

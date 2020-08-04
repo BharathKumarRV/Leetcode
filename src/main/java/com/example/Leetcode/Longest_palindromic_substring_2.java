@@ -6,25 +6,29 @@ import org.springframework.boot.SpringApplication;
 
 public class Longest_palindromic_substring_2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int
-	 * res=lengthOfLongestSubstring("pwwkew"); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String res = longestPalindrome("babad");
+		System.out.println(res);
 
-	 public static int lengthOfLongestSubstring(String s) {
-	        if (s.length()==0) return 0;
-	        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-	        int max=0;
-	        for (int i=0, j=0; i<s.length(); ++i){
-	            if (map.containsKey(s.charAt(i))){
-	                j = Math.max(j,map.get(s.charAt(i))+1);
-	            }
-	            map.put(s.charAt(i),i);
-	            max = Math.max(max,i-j+1);
-	        }
-	        return max;
-	    }
+	}
+
+	public static String longestPalindrome(String s) {
+		int n = s.length();
+		String res = null;
+
+		boolean[][] dp = new boolean[n][n];
+
+		for (int i = n - 1; i >= 0; i--) {
+			for (int j = i; j < n; j++) {
+				dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1]);
+
+				if (dp[i][j] && (res == null || j - i + 1 > res.length())) {
+					res = s.substring(i, j + 1);
+				}
+			}
+		}
+
+		return res;
+	}
 }

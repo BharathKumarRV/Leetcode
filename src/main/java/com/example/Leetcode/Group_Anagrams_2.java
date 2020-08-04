@@ -9,15 +9,14 @@ import org.springframework.boot.SpringApplication;
 
 public class Group_Anagrams_2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); String str[] = {
-	 * "eat", "tea", "tan", "ate", "nat", "bat" }; List<List<String>> res =
-	 * groupAnagrams(str); System.out.println(res);
-	 * 
-	 * }
-	 */
-	
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String str[] = { "eat", "tea", "tan", "ate", "nat", "bat" };
+		List<List<String>> res = groupAnagrams(str);
+		System.out.println(res);
+
+	}
+
 	public static List<List<String>> groupAnagrams(String[] strs) {
 		List<List<String>> res = new ArrayList<>();
 		Map<String, List<String>> map = new HashMap<>();

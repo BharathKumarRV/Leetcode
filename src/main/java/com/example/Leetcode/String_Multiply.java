@@ -4,16 +4,15 @@ import org.springframework.boot.SpringApplication;
 
 public class String_Multiply {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); String res =
-	 * multiply("12","6"); System.out.println(res);
-	 * 
-	 * }
-	 */
-	
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String res = multiply("12", "26");
+		System.out.println(res);
+
+	}
+
 	public static String multiply(String num1, String num2) {
-        int m = num1.length(), n = num2.length();
+		int m = num1.length(), n = num2.length();
 		int[] pos = new int[m + n];
 
 		for (int i = m - 1; i >= 0; i--) {
@@ -32,5 +31,5 @@ public class String_Multiply {
 			if (!(sb.length() == 0 && p == 0))
 				sb.append(p);
 		return sb.length() == 0 ? "0" : sb.toString();
-    }
+	}
 }

@@ -6,17 +6,17 @@ import java.util.Stack;
 import org.springframework.boot.SpringApplication;
 
 public class ValidParenthesis {
-	
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); LeetcodeApplication
-	 * la = new LeetcodeApplication(); String s="()"; boolean res = la.isValid(s);
-	 * System.out.println(res);
-	 * 
-	 * }
-	 */
 
-	public boolean isValid(String s) {
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		LeetcodeApplication la = new LeetcodeApplication();
+		String s = "[()]";
+		boolean res =isValid(s);
+		System.out.println(res);
+
+	}
+
+	public static boolean isValid(String s) {
 
 		Stack<Character> stack = new Stack<Character>();
 		for (char c : s.toCharArray()) {

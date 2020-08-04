@@ -1,8 +1,17 @@
 package com.example.Leetcode;
 
+import org.springframework.boot.SpringApplication;
+
 public class Roman_Int {
-	
-	public int romanToInt(String s) {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int res = romanToInt("MCMXCIV");
+		System.out.println(res);
+
+	}
+
+	public static int romanToInt(String s) {
 		int res = 0;
 		for (int i = s.length() - 1; i >= 0; i--) {
 			char c = s.charAt(i);
