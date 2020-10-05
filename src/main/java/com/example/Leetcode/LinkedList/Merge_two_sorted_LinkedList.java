@@ -48,9 +48,9 @@ public class Merge_two_sorted_LinkedList {
 		Merge_two_sorted_LinkedList llist2 = new Merge_two_sorted_LinkedList();
 
 		// Node head1 = new Node(5);
-		llist1.addToTheLast(new Node(5));
-		llist1.addToTheLast(new Node(10));
-		llist1.addToTheLast(new Node(15));
+		llist1.addToTheLast(new Node(1));
+		//llist1.addToTheLast(new Node(10));
+		//llist1.addToTheLast(new Node(15));
 
 		// Node head2 = new Node(2);
 		llist2.addToTheLast(new Node(2));

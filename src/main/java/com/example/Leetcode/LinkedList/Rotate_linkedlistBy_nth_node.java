@@ -61,13 +61,13 @@ public class Rotate_linkedlistBy_nth_node {
 			}
 			int stepsToNewHead=n-k;
 			tail.next=head;
-			ListNode newTail=tail;
+			//ListNode newTail=tail;
 			while(stepsToNewHead-->0) {
-				newTail=newTail.next;
+				tail=tail.next;
 				//tail=tail.next;
 			}
-			ListNode newHead=newTail.next;
-			newTail.next=null;
+			ListNode newHead=tail.next;
+			tail.next=null;
 			return newHead;
 		}
 		

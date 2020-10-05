@@ -10,9 +10,9 @@ public class Combination_Sum {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int[] nums = { 2, 3, 4, 5 };
+		int[] nums = {2, 3, 6, 7 };
 		List<List<Integer>> res;
-		res = combinationSum(nums, 5);
+		res = combinationSum(nums, 7);
 		System.out.println(res);
 	}
 

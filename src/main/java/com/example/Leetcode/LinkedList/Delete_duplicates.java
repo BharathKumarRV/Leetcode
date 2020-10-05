@@ -15,7 +15,7 @@ public class Delete_duplicates {
 		}
 
 	}
-	
+
 	public static Delete_duplicates insert(Delete_duplicates list, int data) {
 		// Create a new node with given data
 		ListNode new_node = new ListNode(data);
@@ -57,18 +57,16 @@ public class Delete_duplicates {
 
 		return head;
 	}
-	
-	public ListNode deleteDuplicates_method2(ListNode head) {
-        if (head == null) return head;
-        head.next = deleteDuplicates(head.next);
-        return head.next != null && head.val == head.next.val ? head.next : head;
-    }
-	
-	
-	
 
-	public static void printList(Delete_duplicates list) {
-		ListNode currNode = list.head;
+	public static ListNode deleteDuplicates_method2(ListNode head) {
+		if (head == null || head.next == null)
+			return head;
+		head.next = deleteDuplicates_method2(head.next);
+		return head.val == head.next.val ? head.next : head;
+	}
+
+	public static void printList(ListNode head) {
+		ListNode currNode = head;
 
 		System.out.print("LinkedList: ");
 
@@ -90,10 +88,12 @@ public class Delete_duplicates {
 		list = insert(list, 2);
 		list = insert(list, 3);
 		list = insert(list, 3);
-		printList(list);
+		printList(list.head);
 		ListNode head = list.head;
-		ListNode res = deleteDuplicates(head);
-		printList(list);
+		ListNode dummy = new ListNode(0);
+		dummy.next = head;
+		ListNode res = deleteDuplicates_method2(dummy);
+		printList(res.next);
 	}
 
 }

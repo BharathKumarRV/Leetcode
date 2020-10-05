@@ -8,15 +8,18 @@ import org.springframework.boot.SpringApplication;
 
 public class Merge_Intervals_2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int R = 3; int C = 6;
-	 * int a[][] = { { 1, 3 }, { 2, 6 }, { 8, 10 }, { 15, 18 } }; int[][] res =
-	 * merge(a); for (int i = 0; i < res.length; i++) { int temp[] = res[i];
-	 * System.out.println(temp[0] + " " + temp[1]); }
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int R = 3;
+		int C = 6;
+		int a[][] = { { 1, 3 }, { 8, 10 }, { 2, 6 }, { 15, 18 } };
+		int[][] res = merge(a);
+		for (int i = 0; i < res.length; i++) {
+			int temp[] = res[i];
+			System.out.println(temp[0] + " " + temp[1]);
+		}
+
+	}
 
 	public static int[][] merge(int[][] intervals) {
 		if (intervals.length <= 1)

@@ -9,16 +9,15 @@ import org.springframework.boot.SpringApplication;
 
 public class Three_sum_2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); LeetcodeApplication
-	 * la = new LeetcodeApplication(); int num[] = { -1, 0, 1, 2, -1, -4 };
-	 * List<List<Integer>> res = la.threeSum(num); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int num[] = { -1, 0, 1, 2, -1, -4 };
+		List<List<Integer>> res = threeSum(num);
+		System.out.println(res);
 
-	public List<List<Integer>> threeSum(int[] nums) {
+	}
+
+	public static List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> list = new LinkedList<>();
 		Arrays.sort(nums);
 		for (int i = 0; i < nums.length - 2; i++) {
@@ -29,7 +28,7 @@ public class Three_sum_2 {
 		return list;
 	}
 
-	private void twoSum(List<List<Integer>> list, int[] nums, int low, int high, int target) {
+	private static void twoSum(List<List<Integer>> list, int[] nums, int low, int high, int target) {
 		if (low > high)
 			return;
 		HashSet<Integer> set = new HashSet<>();

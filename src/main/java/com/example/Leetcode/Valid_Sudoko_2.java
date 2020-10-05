@@ -57,9 +57,9 @@ public class Valid_Sudoko_2 {
 					return false;
 				if (board[j][i] != '.' && !columns.add(board[j][i]))
 					return false;
-				int RowIndex = 3 * (i / 3);
-				int ColIndex = 3 * (i % 3);
-				if (board[RowIndex + j / 3][ColIndex + j % 3] != '.'
+				int RowIndex = 3 * (i / 3); //gives start of each block    00,03,06
+				int ColIndex = 3 * (i % 3);                             // 30,33,36
+				if (board[RowIndex + j / 3][ColIndex + j % 3] != '.'    // 60,63,66 
 						&& !cube.add(board[RowIndex + j / 3][ColIndex + j % 3]))
 					return false;
 			}

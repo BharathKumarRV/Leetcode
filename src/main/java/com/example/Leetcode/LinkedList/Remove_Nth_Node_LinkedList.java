@@ -64,11 +64,12 @@ public class Remove_Nth_Node_LinkedList {
 	public static ListNode removeNthFromEnd(ListNode head, int n) {
 
 		ListNode start = new ListNode(0);
+		start.next = head;
 		ListNode slow = start, fast = start;
-		slow.next = head;
+		//slow.next = head;
 
 		// Move fast in front so that the gap between slow and fast becomes n
-		for (int i = 1; i <= n + 1; i++) {
+		for (int i = 0; i <= n; i++) {
 			fast = fast.next;
 		}
 		// Move fast to the end, maintaining the gap

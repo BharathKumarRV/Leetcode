@@ -32,6 +32,9 @@ public class Combination_Sum2 {
 		if (target < 0)
 			return;
 		for (int i = cur; i < nums.length; i++) {
+			if(nums[i]>target) {
+				return;
+			}
 			if (i > cur && nums[i] == nums[i - 1])
 				continue;
 			path.add(path.size(), nums[i]);

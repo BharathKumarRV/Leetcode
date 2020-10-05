@@ -4,14 +4,15 @@ import org.springframework.boot.SpringApplication;
 
 public class Sort_colors {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int A[] = { 2, 0, 2,
-	 * 1, 1, 0 }; sortColors(A); for(int i=0;i<A.length;i++) {
-	 * System.out.print(A[i]); }
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int A[] = { 2, 0, 2, 1, 1, 0 };
+		sortColors(A);
+		for (int i = 0; i < A.length; i++) {
+			System.out.print(A[i]);
+		}
+
+	}
 
 	public static void sortColors(int[] A) {
 		if (A == null || A.length < 2)

@@ -4,13 +4,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Count_and_Say {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); String
-	 * res=countAndSay(4); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String res = countAndSay(1);
+		System.out.println(res);
+
+	}
 
 	public static String countAndSay(int n) {
 		if (n <= 0)

@@ -4,17 +4,19 @@ import org.springframework.boot.SpringApplication;
 
 public class Lastword_length_2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int res =
-	 * lengthOfLastWord("Hello world"); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		//int res = lengthOfLastWord("Hello world");
+		int res = lengthOfLastWord2("Hello world");
+		System.out.println(res);
 
-	//single line code
-	//return s.trim().length()-s.trim().lastIndexOf(" ")-1;
-	
+	}
+
+	// single line code
+	public static int lengthOfLastWord2(String s) {
+		return s.trim().length() - s.trim().lastIndexOf(" ") - 1;
+	}
+
 	public static int lengthOfLastWord(String s) {
 
 		int len = 0, tail = s.length() - 1;

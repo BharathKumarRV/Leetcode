@@ -13,51 +13,35 @@ public class Longest_substring {
 
 	}
 
-	public static int lengthOfLongestSubstring(String s) {
+	/*
+	 * public static int lengthOfLongestSubstring(String s) {
+	 * 
+	 * int i = 0, j = 0, max = 0; Set<Character> set = new HashSet<>();
+	 * 
+	 * while (j < s.length()) { if (!set.contains(s.charAt(j))) {
+	 * set.add(s.charAt(j++)); max = Math.max(max, set.size()); } else {
+	 * set.remove(s.charAt(i++)); } }
+	 * 
+	 * return max;
+	 * 
+	 * }
+	 */
 
-		int i = 0, j = 0, max = 0;
-		Set<Character> set = new HashSet<>();
+	/*
+	 * public static int lengthOfLongestSubstring(String s) { int left = 0, right =
+	 * 0, max = 0; Set<Character> set = new HashSet<>(); while (right < s.length())
+	 * { if (set.add(s.charAt(right))) { right++; max = Math.max(max, right - left);
+	 * } else { set.remove(s.charAt(left++)); } } return max;
+	 * 
+	 * }
+	 */
 
-		while (j < s.length()) {
-			if (!set.contains(s.charAt(j))) {
-				set.add(s.charAt(j++));
-				max = Math.max(max, set.size());
-			} else {
-				set.remove(s.charAt(i++));
-			}
-		}
-
-		return max;
-
-	}
-
-	public static int lengthOfLongestSubstring(String s) {
-		int left = 0, right = 0, max = 0;
-		Set<Character> set = new HashSet<>();
-		while (right < s.length()) {
-			if (set.add(s.charAt(right))) {
-				right++;
-				max = Math.max(max, right - left);
-			} else {
-				set.remove(s.charAt(left++));
-			}
-		}
-		return max;
-
-	}
-
-	public static int lengthOfLongestSubstring(String s) {
-		Queue<Character> queue = new LinkedList<>();
-		int res = 0;
-		for (char c : s.toCharArray()) {
-			if (queue.contains(c)) {
-				queue.poll();
-			}
-			queue.offer(c);
-			res = Math.max(res, queue.size());
-		}
-		return res;
-	}
+	/*
+	 * public static int lengthOfLongestSubstring(String s) { Queue<Character> queue
+	 * = new LinkedList<>(); int res = 0; for (char c : s.toCharArray()) { if
+	 * (queue.contains(c)) { queue.poll(); } queue.offer(c); res = Math.max(res,
+	 * queue.size()); } return res; }
+	 */
 
 	public static int lengthOfLongestSubstring(String s) {
 		if (s.length() == 0)

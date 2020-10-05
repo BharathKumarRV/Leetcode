@@ -6,8 +6,8 @@ public class Remove_duplicates {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int[] A = { 1, 1, 2, 3, 4, 4 };
-		int res = removeDuplicates(A);
+		int[] A = { 1, 2, 2, 3, 4, 4 };
+		int res = removeDuplicates2(A);
 		System.out.println(res);
 
 	}
@@ -22,5 +22,14 @@ public class Remove_duplicates {
 				A[id++] = A[i];
 		return id;
 
+	}
+	
+	
+	public static int removeDuplicates2(int[] nums) {
+	    int i = 0;
+	    for(int n : nums)
+	        if(i < 1 || n > nums[i - 1]) 
+	            nums[i++] = n;
+	    return i;
 	}
 }

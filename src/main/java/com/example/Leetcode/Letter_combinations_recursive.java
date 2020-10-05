@@ -15,17 +15,20 @@ public class Letter_combinations_recursive {
 		System.out.println(res);
 
 	}
-	
+
 	private static final String[] KEYS = { "", "", "ab", "cd", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
-    
+
 	public static List<String> letterCombinations(String digits) {
 		List<String> ret = new LinkedList<String>();
+		if (digits == null || digits.length() == 0) {
+			return ret;
+		}
 		combination("", digits, 0, ret);
 		return ret;
 	}
 
 	private static void combination(String prefix, String digits, int offset, List<String> ret) {
-		if (offset >= digits.length()) {
+		if (offset == digits.length()) {
 			ret.add(prefix);
 			return;
 		}

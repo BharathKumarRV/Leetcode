@@ -4,14 +4,13 @@ import org.springframework.boot.SpringApplication;
 
 public class Word_search_matrix {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); char[][] board=
-	 * {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}; boolean res =
-	 * exist(board, "ABCCED"); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		char[][] board = { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } };
+		boolean res = exist(board, "ABCB");
+		System.out.println(res);
+
+	}
 
 	static boolean[][] visited;
 

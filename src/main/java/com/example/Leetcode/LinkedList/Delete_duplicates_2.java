@@ -77,6 +77,20 @@ public class Delete_duplicates_2 {
 		}
 	}
 	
+	public static ListNode deleteDuplicates_recursive(ListNode head) {
+	    if (head == null) return null;
+	    
+	    if (head.next != null && head.val == head.next.val) {
+	        while (head.next != null && head.val == head.next.val) {
+	            head = head.next;
+	        }
+	        return deleteDuplicates_recursive(head.next);
+	    } else {
+	        head.next = deleteDuplicates_recursive(head.next);
+	    }
+	    return head;
+	}
+	
 	public static void main(String[] args) {
 		/* Start with the empty list. */
 		Delete_duplicates_2 list = new Delete_duplicates_2();
@@ -88,7 +102,7 @@ public class Delete_duplicates_2 {
 		list = insert(list, 4);
 		printList(list);
 		ListNode head = list.head;
-		ListNode res = deleteDuplicates(head);
+		ListNode res = deleteDuplicates_recursive(head);
 		list.head=res;
 		printList(list);
 	}

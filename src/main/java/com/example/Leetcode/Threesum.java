@@ -10,7 +10,7 @@ public class Threesum {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int num[] = { -1, 0, 1, 2, -1, -4 };
+		int num[] = { -2, 0, 0, 2, 2 };
 		List<List<Integer>> res = threeSum(num);
 		System.out.println(res);
 
@@ -29,7 +29,7 @@ public class Threesum {
 				while (lo < hi) {
 					if (num[lo] + num[hi] == sum) {
 						res.add(Arrays.asList(num[i], num[lo], num[hi]));
-						while (lo < hi && num[lo] == num[lo + 1])
+						while (lo < hi && num[lo] == num[lo + 1]) //for duplicates  {-2, 0, 0, 2, 2} 
 							lo++;
 						while (lo < hi && num[hi] == num[hi - 1])
 							hi--;

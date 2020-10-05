@@ -4,13 +4,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Lastword_length {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int res =
-	 * lengthOfLastWord("     "); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int res = lengthOfLastWord("     ");
+		System.out.println(res);
+
+	}
 
 	public static int lengthOfLastWord(String s) {
 

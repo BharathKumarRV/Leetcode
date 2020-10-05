@@ -6,7 +6,7 @@ public class Roman_Int {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = romanToInt("MCMXCIV");
+		int res = romanToInt("IX");
 		System.out.println(res);
 
 	}

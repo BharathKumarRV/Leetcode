@@ -4,17 +4,18 @@ import org.springframework.boot.SpringApplication;
 
 public class Plus_one {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int digits[] = { 1,
-	 * 2, 3 }; int res[] = plusOne(digits); for (int i = 0; i < res.length; i++) {
-	 * System.out.print(res[i]+" "); }
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int digits[] = {};
+		int res[] = plusOne(digits);
+		for (int i = 0; i < res.length; i++) {
+			System.out.print(res[i] + " ");
+		}
+
+	}
 
 	public static int[] plusOne(int[] digits) {
-		for (int i = digits.length-1; i >= 0; i--) {
+		for (int i = digits.length - 1; i >= 0; i--) {
 			if (digits[i] < 9) {
 				digits[i]++;
 				return digits;

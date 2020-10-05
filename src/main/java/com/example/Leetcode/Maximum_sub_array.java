@@ -4,14 +4,13 @@ import org.springframework.boot.SpringApplication;
 
 public class Maximum_sub_array {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int nums[]=
-	 * {-2,1,-3,4,-1,2,1,-5,4}; int res = maxSubArray(nums);
-	 * System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int nums[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+		int res = maxSubArray(nums);
+		System.out.println(res);
+
+	}
 
 	public static int maxSubArray(int[] A) {
 		int n = A.length;

@@ -9,7 +9,7 @@ public class Roman_Int_3 {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = romanToInt("MCMXCIV");
+		int res = romanToInt("XV");
 		System.out.println(res);
 
 	}

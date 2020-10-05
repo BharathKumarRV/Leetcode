@@ -37,8 +37,9 @@ public class Permutation_unique {
 		for (int i = 0; i < nums.length; i++) {
 			if (used[i])
 				continue;
-			if (i > 0 && nums[i - 1] == nums[i] && !used[i - 1])
-				continue;
+			/*
+			 * if (i > 0 && nums[i - 1] == nums[i] && !used[i - 1]) continue;
+			 */
 			used[i] = true; // keep one number constant(ex:1)and find permute of other two.
 			list.add(nums[i]);
 			dfs(nums, used, list, res); // Finding permute of other numbers
@@ -46,9 +47,9 @@ public class Permutation_unique {
 			list.remove(list.size() - 1); // Also remove the number(ex:1)
 			// Removing the duplicates
 
-			/*
-			 * while ((i + 1) < nums.length && nums[i] == nums[i + 1]) { ++i; }
-			 */
+			while ((i + 1) < nums.length && nums[i] == nums[i + 1]) {
+				++i;
+			}
 
 		}
 	}
