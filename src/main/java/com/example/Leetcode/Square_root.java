@@ -6,7 +6,7 @@ public class Square_root {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = mySqrt2(8);
+		int res = mySqrt(8);
 		System.out.println(res);
 	}
 

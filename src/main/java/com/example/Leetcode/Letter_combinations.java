@@ -10,7 +10,7 @@ public class Letter_combinations {
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
 
-		String nums = "234";
+		String nums = "23";
 		List<String> res = letterCombinations(nums);
 		System.out.println(res);
 
@@ -21,7 +21,7 @@ public class Letter_combinations {
 		LinkedList<String> ans = new LinkedList<String>();
 		if (digits.isEmpty())
 			return ans;
-		String[] mapping = new String[] { "0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+		String[] mapping = new String[] { "0", "1", "ab", "cd", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
 		ans.add("");
 		for (int i = 0; i < digits.length(); i++) {
 			int x = digits.charAt(i)-'0';

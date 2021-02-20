@@ -8,7 +8,7 @@ public class Longest_Valid_Parenthesis {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		String s = "(((()";
+		String s = ")(())))";
 		int res = longestValidParentheses(s);
 		System.out.println(res);
 
@@ -30,6 +30,27 @@ public class Longest_Valid_Parenthesis {
 					if (stack.isEmpty())
 						max = Math.max(max, j - left);
 					else
+						max = Math.max(max, j - stack.peek());
+				}
+			}
+		}
+		return max;
+
+	}
+	
+	public static int longestValidParentheses_2(String s) {
+
+		Stack<Integer> stack = new Stack<Integer>();
+		int max = 0;
+		int left = -1;
+		for (int j = 0; j < s.length(); j++) {
+			if (s.charAt(j) == '(')
+				stack.push(j);
+			else {
+				if (stack.isEmpty())
+					left = j;
+				else {
+					    stack.pop();
 						max = Math.max(max, j - stack.peek());
 				}
 			}

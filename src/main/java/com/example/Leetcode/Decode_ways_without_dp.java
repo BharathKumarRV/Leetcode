@@ -9,13 +9,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Decode_ways_without_dp {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int res =
-	 * numDecodings("226"); System.out.print(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int res = numDecodings("226");
+		System.out.print(res);
+
+	}
 
 	public static int numDecodings(String s) {
 

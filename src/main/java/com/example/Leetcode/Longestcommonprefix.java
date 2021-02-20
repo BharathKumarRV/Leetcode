@@ -6,7 +6,7 @@ public class Longestcommonprefix {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		String[] strs= {"flower","flow","flight"};
+		String[] strs= {"flow","flower","flight"};
 		String res=longestCommonPrefix(strs);
 		System.out.println(res);
 		

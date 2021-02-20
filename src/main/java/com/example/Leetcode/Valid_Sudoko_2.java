@@ -18,6 +18,26 @@ public class Valid_Sudoko_2 {
 
 	}
 
+	public static boolean isValidSudoku_2(char[][] board) {
+		for (int i = 0; i < 9; i++) {
+			HashSet<Character> rows = new HashSet<Character>();
+			HashSet<Character> columns = new HashSet<Character>();
+			HashSet<Character> cube = new HashSet<Character>();
+			for (int j = 0; j < 9; j++) {
+				if (board[i][j] != '.' && !rows.add(board[i][j]))
+					return false;
+				if (board[j][i] != '.' && !columns.add(board[j][i]))
+					return false;
+				int RowIndex = 3 * (i / 3); //gives start of each block        00,03,06
+				int ColIndex = 3 * (i % 3);  //i is used for block traversal// 30,33,36
+				if (board[RowIndex + j / 3][ColIndex + j % 3] != '.'    // 60,63,66 
+						&& !cube.add(board[RowIndex + j / 3][ColIndex + j % 3])) //j for traversing within block j/3 and j%3 is to traverse within each block
+					return false;
+			}
+		}
+		return true;
+	}
+	
 	public static boolean isValidSudoku(char[][] board) {
 
 		short[] rows = new short[9];
@@ -44,26 +64,6 @@ public class Valid_Sudoko_2 {
 			}
 		}
 
-		return true;
-	}
-
-	public static boolean isValidSudoku_2(char[][] board) {
-		for (int i = 0; i < 9; i++) {
-			HashSet<Character> rows = new HashSet<Character>();
-			HashSet<Character> columns = new HashSet<Character>();
-			HashSet<Character> cube = new HashSet<Character>();
-			for (int j = 0; j < 9; j++) {
-				if (board[i][j] != '.' && !rows.add(board[i][j]))
-					return false;
-				if (board[j][i] != '.' && !columns.add(board[j][i]))
-					return false;
-				int RowIndex = 3 * (i / 3); //gives start of each block    00,03,06
-				int ColIndex = 3 * (i % 3);                             // 30,33,36
-				if (board[RowIndex + j / 3][ColIndex + j % 3] != '.'    // 60,63,66 
-						&& !cube.add(board[RowIndex + j / 3][ColIndex + j % 3]))
-					return false;
-			}
-		}
 		return true;
 	}
 }

@@ -4,13 +4,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Decode_ways_recursion_to_dp {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int res =
-	 * numDecodings("226"); System.out.print(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int res = numDecodings("226");
+		System.out.print(res);
+
+	}
 
 	public static int numDecodings(String s) {
 		int dp[] = new int[s.length() + 1];

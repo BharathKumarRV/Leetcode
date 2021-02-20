@@ -59,7 +59,7 @@ public class Permutation_unique {
 			res.add(new ArrayList<Integer>(list));
 			return;
 		}
-		for (int i = 0; i < nums.length; i++) {
+		for (int i = 0; i < nums.length; i++) { // Start from 0 as we have try out combinations
 			if (list.contains(nums[i]))
 				continue;
 			list.add(nums[i]);

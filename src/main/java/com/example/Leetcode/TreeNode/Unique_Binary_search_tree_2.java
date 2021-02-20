@@ -31,6 +31,7 @@ public class Unique_Binary_search_tree_2 {
 			return list;
 		}
 
+		//Not needed
 		if (start == end) {
 			list.add(new TreeNode(start));
 			return list;
@@ -59,16 +60,14 @@ public class Unique_Binary_search_tree_2 {
 	static void preorder(TreeNode root) {
 		if (root != null) {
 			System.out.print(root.val);
-			if(root.left!=null) {
+			if (root.left != null) {
 				preorder(root.left);
-			}
-			else if(root.left==null && root.right!=null){
+			} else if (root.left == null && root.right != null) {
 				System.out.print(root.left);
 			}
-			if(root.right!=null) {
+			if (root.right != null) {
 				preorder(root.right);
-			}
-			else if(root.left!=null && root.right==null){
+			} else if (root.left != null && root.right == null) {
 				System.out.print(root.right);
 			}
 		}
@@ -86,7 +85,7 @@ public class Unique_Binary_search_tree_2 {
 		 * tree.root.left.right = new TreeNode(5);
 		 */
 
-		List<TreeNode> res = generateTrees(0);
+		List<TreeNode> res = generateTrees(3);
 		for (int i = 0; i < res.size(); i++) {
 			preorder(res.get(i));
 			System.out.println();

@@ -6,7 +6,7 @@ public class Count_and_Say {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		String res = countAndSay(1);
+		String res = countAndSay(4);
 		System.out.println(res);
 
 	}

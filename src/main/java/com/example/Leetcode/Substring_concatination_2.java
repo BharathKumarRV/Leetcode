@@ -9,8 +9,8 @@ public class Substring_concatination_2 {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		String s = "wordgoodgoodgoodbestword";
-		String str[] = { "word", "good", "best", "word" };
+		String s = "barfoofoomanfoobar";
+		String str[] = { "foo", "bar" };
 		List<Integer> res = findSubstring(s, str);
 		System.out.println(res);
 

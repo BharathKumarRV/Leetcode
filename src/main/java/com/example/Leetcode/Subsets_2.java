@@ -9,7 +9,7 @@ public class Subsets_2 {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int nums[] = { 1, 2, 3 };
+		int nums[] = { 1, 2 };
 		List<List<Integer>> res = subsets(nums);
 		System.out.println(res);
 

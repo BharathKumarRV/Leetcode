@@ -6,25 +6,28 @@ public class Search_2d_matrix_3 {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int matrix[][] = { { 1, 3, 5, 7 }, { 10, 11, 16, 20 }, { 23, 30, 34, 50 } };
-		boolean res = stairSearch(matrix, 11);
+		int matrix[][] = { { 1, 3 } };
+		boolean res = stairSearch(matrix, 3);
 		System.out.println(res);
 
 	}
 
-	public static boolean stairSearch(int matrix[][], int element) {
-		int n = matrix.length;
-		if (element < matrix[0][0] || element > matrix[n - 1][n - 1])
+
+	public static boolean stairSearch(int[][] matrix, int target) {
+
+		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
 			return false;
-		int r = 0;
-		int c = n - 1;
-		while (r <= n - 1 && c >= 0) {
-			if (matrix[r][c] < element)
-				r++;
-			else if (matrix[r][c] > element)
-				c--;
-			else
+		}
+		int row = 0;
+		int col = matrix[0].length - 1;
+		while (row < matrix.length && col >= 0) {
+			if (matrix[row][col] == target) {
 				return true;
+			} else if (matrix[row][col] < target) {
+				row++;
+			} else {
+				col--;
+			}
 		}
 		return false;
 	}

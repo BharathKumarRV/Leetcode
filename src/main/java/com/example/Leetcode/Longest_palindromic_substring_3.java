@@ -6,7 +6,7 @@ public class Longest_palindromic_substring_3 {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		String res = longestPalSubstr("racecar");
+		String res = longestPalSubstr("babad");
 		System.out.println(res);
 
 	}

@@ -1,7 +1,5 @@
 package com.example.Leetcode.LinkedList;
 
-import com.example.Leetcode.LinkedList.LinkedList.ListNode;
-
 public class Partition_linkedlist {
 
 	ListNode head;
@@ -69,9 +67,30 @@ public class Partition_linkedlist {
 			head = head.next;
 		}
 		// no need for extra check because of fake heads
-		smaller.next = biggerHead.next; // smaller will be at the end of the list, biggerHead will be at the beginning of bigger list
+		smaller.next = biggerHead.next; // smaller will be at the end of the list, biggerHead will be at the beginning
+										// of bigger list
 		bigger.next = null; // cut off anything after bigger
-		return smallerHead.next; //smallerHead will the beginning of the smaller list
+		return smallerHead.next; // smallerHead will the beginning of the smaller list
+	}
+
+	public static ListNode partition2(ListNode head, int x) {
+		ListNode smallerHead = new ListNode(0), biggerHead = new ListNode(0);
+		ListNode smaller = smallerHead, bigger = biggerHead;
+		while (head != null) {
+			if (head.val < x) {
+				smaller.next = head;
+				smaller = head;
+			} else {
+				bigger.next = head;
+				bigger = head;
+			}
+			head = head.next;
+		}
+		// no need for extra check because of fake heads
+		smaller.next = biggerHead.next; // smaller will be at the end of the list, biggerHead will be at the beginning
+										// of bigger list
+		bigger.next = null; // cut off anything after bigger
+		return smallerHead.next; // smallerHead will the beginning of the smaller list
 	}
 
 	public static void main(String[] args) {
@@ -85,7 +104,7 @@ public class Partition_linkedlist {
 		list = insert(list, 2);
 		printList(list);
 		ListNode head = list.head;
-		partition(head, 3);
+		partition2(head, 3);
 		printList(list);
 	}
 

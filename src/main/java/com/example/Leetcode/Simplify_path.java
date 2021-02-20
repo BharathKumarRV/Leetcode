@@ -11,7 +11,7 @@ public class Simplify_path {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		String res = simplifyPath("/a/../../b/../c//.//");
+		String res = simplifyPath("/a/../../b/../c//.//d");
 		System.out.println(res);
 	}
 	 

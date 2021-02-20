@@ -6,13 +6,13 @@ public class Unique_paths {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = uniquePaths2(3, 3);
+		int res = uniquePaths(7, 3);
 		System.out.println(res);
 
 	}
 
 	public static int uniquePaths(int m, int n) {
-		Integer[][] map = new Integer[m][n];
+		int[][] map = new int[m][n];
 		for (int i = 0; i < m; i++) {
 			map[i][0] = 1;
 		}
@@ -28,7 +28,7 @@ public class Unique_paths {
 	}
 
 	public static int uniquePaths2(int m, int n) {
-		Integer[][] map = new Integer[m][n];
+		int[][] map = new int[m][n];
 
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n; j++) {

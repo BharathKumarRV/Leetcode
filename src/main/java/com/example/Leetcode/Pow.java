@@ -6,7 +6,7 @@ public class Pow {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		double res = myPow(2.00000, -2147483648);
+		double res = myPow(2, 3);
 		System.out.println(res);
 
 	}
@@ -24,19 +24,24 @@ public class Pow {
 		return result;
 	}
 
-	/*
-	 * public static double myPow(double x, int n) { if(n == 0) return 1; double
-	 * temp=myPow(x,n/2);
-	 * 
-	 * if(n%2==0) return temp*temp; else if(n>0) return temp*temp*x; else return
-	 * (temp*temp)/x; }
-	 */
+	public static double myPow_2(double x, int n) {
+		if (n == 0)
+			return 1;
+		double temp = myPow(x, n / 2);
+
+		if (n % 2 == 0)
+			return temp * temp;
+		else if (n > 0)
+			return temp * temp * x;
+		else
+			return (temp * temp) / x;
+	}
 
 	public static double myPow(double x, int n) {
 		if (n == 0)
 			return 1;
 		if (n < 0) {
-			return 1 / x * myPow(1 / x, -(n + 1)); 
+			return 1 / x * myPow(1 / x, -(n + 1));
 		}
 		return (n % 2 == 0) ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2);
 	}

@@ -7,13 +7,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Restore_ip_adresses {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); List<String> res =
-	 * restoreIpAddresses("25525511135"); System.out.print(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		List<String> res = restoreIpAddresses("25525");
+		System.out.print(res);
+
+	}
 
 	public static List<String> restoreIpAddresses(String s) {
 		List<String> res = new ArrayList<>();

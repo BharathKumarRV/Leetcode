@@ -7,13 +7,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Gray_code_2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); List<Integer> res =
-	 * grayCode(3); System.out.print(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		List<Integer> res = grayCode(3);
+		System.out.print(res);
+
+	}
 
 	public static List<Integer> grayCode(int n) {
 		List<Integer> list = new ArrayList<>();

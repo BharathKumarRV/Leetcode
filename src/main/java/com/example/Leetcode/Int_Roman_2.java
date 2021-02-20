@@ -6,7 +6,7 @@ public class Int_Roman_2 {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		String res = intToRoman(58);
+		String res = intToRoman(1994);
 		System.out.println(res);
 
 	}

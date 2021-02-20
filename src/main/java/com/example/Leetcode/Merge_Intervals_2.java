@@ -13,7 +13,7 @@ public class Merge_Intervals_2 {
 		int R = 3;
 		int C = 6;
 		int a[][] = { { 1, 3 }, { 8, 10 }, { 2, 6 }, { 15, 18 } };
-		int[][] res = merge(a);
+		int[][] res = merge_2(a);
 		for (int i = 0; i < res.length; i++) {
 			int temp[] = res[i];
 			System.out.println(temp[0] + " " + temp[1]);
@@ -46,5 +46,31 @@ public class Merge_Intervals_2 {
 		}
 
 		return result.toArray(new int[result.size()][]);
+	}
+
+	public static int[][] merge_2(int[][] intervals) {
+		if (intervals.length <= 1)
+			return intervals;
+
+		// Sort by ascending starting point
+		Arrays.sort(intervals, (arr1, arr2) -> arr1[0] - arr2[0]);
+
+		List<int[]> result = new ArrayList<>();
+
+		int start = intervals[0][0];
+		int end = intervals[0][1];
+
+		for (int[] i : intervals) {
+			if (i[0] <= end) {
+				end = Math.max(end, i[1]);
+			} else {
+				result.add(new int[] { start, end });
+				start = i[0];
+				end = i[1];
+			}
+		}
+
+		result.add(new int[] { start, end });
+		return result.toArray(new int[0][]);
 	}
 }

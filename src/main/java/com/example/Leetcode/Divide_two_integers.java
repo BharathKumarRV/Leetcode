@@ -6,7 +6,7 @@ public class Divide_two_integers {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = divide(9,3);
+		int res = divide(43,8);
 		System.out.println(res);
 
 	}

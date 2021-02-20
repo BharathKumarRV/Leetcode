@@ -4,14 +4,16 @@ import org.springframework.boot.SpringApplication;
 
 public class Merge_sorted_array_88 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); int[] nums1 = { 1, 2,
-	 * 3, 0, 0, 0 }; int[] nums2 = { 2, 5, 6 }; merge(nums1, 3, nums2, 3); for (int
-	 * i = 0; i < nums1.length; i++) { System.out.print(nums1[i] + " "); }
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		int[] nums1 = { 1, 2, 3, 0, 0, 0 };
+		int[] nums2 = { 4, 5, 6 };
+		merge(nums1, 3, nums2, 3);
+		for (int i = 0; i < nums1.length; i++) {
+			System.out.print(nums1[i] + " ");
+		}
+
+	}
 
 	public static void merge(int[] A, int m, int[] B, int n) {
 		int i = m - 1;
@@ -29,7 +31,7 @@ public class Merge_sorted_array_88 {
 		 * zeroes. The second loop then replaces the initial numbers of A since we know
 		 * the numbers in B are smaller than A.
 		 */
-		while(j>=0)
+		while (j >= 0)
 			A[k--] = B[j--];
 	}
 }

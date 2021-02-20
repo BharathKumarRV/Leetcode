@@ -99,7 +99,7 @@ public class Add_two_numbers_recursion {
 
 		list = insert(list, 2);
 		list = insert(list, 4);
-	//	list = insert(list, 3);
+		list = insert(list, 3);
 		list2 = insert(list2, 5);
 		list2 = insert(list2, 6);
 		list2 = insert(list2, 6);

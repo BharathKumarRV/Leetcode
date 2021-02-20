@@ -32,15 +32,15 @@ public class Threesum_backtracking {
 				check += i;
 			if (check == 0)
 				superlist.add(new ArrayList<>(list));
-		} else { /* add to list if not full and recursion call itself */
-			for (int i = start; i < nums.length; i++) {
-				if (i > start && nums[i] == nums[i - 1])
-					continue;
-				list.add(nums[i]);
-				help(nums, list, i + 1);
-				list.remove(list.size() - 1);
-			}
+		} /* add to list if not full and recursion call itself */
+		for (int i = start; i < nums.length; i++) {
+			if (i > start && nums[i] == nums[i - 1])
+				continue;
+			list.add(nums[i]);
+			help(nums, list, i + 1);
+			list.remove(list.size() - 1);
 		}
+
 	}
 
 }

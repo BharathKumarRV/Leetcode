@@ -11,7 +11,7 @@ public class Substring_concatination {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		String s = "barfoothemanfoobar";
+		String s = "barfoofoomanfoobar";
 		String str[] = { "foo", "bar" };
 		List<Integer> res = findSubstring(s, str);
 		System.out.println(res);

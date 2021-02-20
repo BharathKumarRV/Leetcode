@@ -42,7 +42,7 @@ public class N_Queen {
 	}
 
 	private static boolean valid(char[][] chess, int row, int col) {
-		// check all cols
+		// check all rows
 		for (int i = 0; i < row; i++) {
 			if (chess[i][col] == 'Q') {
 				return false;

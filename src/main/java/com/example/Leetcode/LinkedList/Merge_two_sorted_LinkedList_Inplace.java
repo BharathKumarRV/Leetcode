@@ -46,6 +46,33 @@ public class Merge_two_sorted_LinkedList_Inplace {
 	        } 
 	    } 
 	  
+	    static Node merge_2(Node h1, Node h2) 
+	    { 
+	        if (h1 == null) 
+	            return h2; 
+	        if (h2 == null) 
+	            return h1; 
+	        if(h1.data>h2.data) {
+	        	Node temp=h1;
+	        	h1=h2;
+	        	h2=temp;
+	        }
+	        Node res=h1;
+	        while(h1!=null && h2!=null) {
+	        	Node tmp=null;
+	        	while(h1!=null && h1.data<=h2.data) {
+	        		tmp=h1;
+	        		h1=h1.next;
+	        	}
+	        	tmp.next=h2;
+	        	Node temp=h1;
+	         	h1=h2;
+	         	h2=temp;
+	        }
+	        return res;
+	       
+	    } 
+	    
 	    // Driver program 
 	    public static void main(String args[]) 
 	    { 
@@ -61,7 +88,7 @@ public class Merge_two_sorted_LinkedList_Inplace {
 	  
 	        // 0.2.4 LinkedList created 
 	  
-	        Node mergedhead = merge(head1, head2); 
+	        Node mergedhead = merge_2(head1, head2); 
 	  
 	        printList(mergedhead); 
 	    } 

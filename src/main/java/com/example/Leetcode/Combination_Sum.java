@@ -10,7 +10,7 @@ public class Combination_Sum {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int[] nums = {2, 3, 6, 7 };
+		int[] nums = { 2, 3, 6, 7 };
 		List<List<Integer>> res;
 		res = combinationSum(nums, 7);
 		System.out.println(res);
@@ -27,16 +27,16 @@ public class Combination_Sum {
 	private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start) {
 		if (remain < 0)
 			return;
-		else if (remain == 0)
+		if (remain == 0)
 			list.add(new ArrayList<>(tempList));
-		else {
-			for (int i = start; i < nums.length; i++) {
-				if (nums[i] > remain) // sort can be usefull here
-					return;
-				tempList.add(nums[i]);
-				backtrack(list, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same elements
-				tempList.remove(tempList.size() - 1);
-			}
+
+		for (int i = start; i < nums.length; i++) {
+			if (nums[i] > remain) // sort can be usefull here
+				return;
+			tempList.add(nums[i]);
+			backtrack(list, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same elements
+			tempList.remove(tempList.size() - 1);
 		}
+
 	}
 }

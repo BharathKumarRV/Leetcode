@@ -11,34 +11,30 @@ public class Test {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int nums[] = { 2, 3, 6, 7 };
-		List<List<Integer>> res = combinationsum(nums, 7);
+		int nums[] = { 1, 2, 2 };
+		List<List<Integer>> res = combinationsum(nums);
 		System.out.println(res);
 
 	}
 
-	static private List<List<Integer>> res = new ArrayList<>();
+	// static private List<List<Integer>> res = new ArrayList<>();
 
-	public static List<List<Integer>> combinationsum(int nums[], int target) {
-		if (nums == null || nums.length == 0) {
-			return res;
-		}
-
-		helper(nums, new ArrayList<>(), target, 0);
+	public static List<List<Integer>> combinationsum(int[] nums) {
+		List<List<Integer>> res = new ArrayList<>();
+		helper(nums, res, new ArrayList<>(), 0);
 		return res;
 	}
 
-	public static void helper(int nums[], List<Integer> temp, int target, int start) {
-		if (target < 0) {
-			return;
-		} else if (target == 0) {
+	public static void helper(int nums[], List<List<Integer>> res, List<Integer> temp, int start) {
+
+		if (!res.contains(temp)) {
 			res.add(new ArrayList<>(temp));
-		} else {
-			for (int i = start; i < nums.length; i++) {
-				temp.add(nums[i]);
-				helper(nums, temp, target - nums[i], i);
-				temp.remove(temp.size() - 1);
-			}
+		}
+		for (int i = start; i < nums.length; i++) {
+			temp.add(nums[i]);
+			helper(nums, res, temp, i + 1);
+			temp.remove(temp.size() - 1);
+
 		}
 	}
 }

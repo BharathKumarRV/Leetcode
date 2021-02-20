@@ -24,7 +24,7 @@ public class Combination_Sum2 {
 		return res;
 	}
 
-	static void dfs_com(int[] nums, int cur, int target, List<Integer> path, List<List<Integer>> res) {
+	public static void dfs_com(int[] nums, int cur, int target, List<Integer> path, List<List<Integer>> res) {
 		if (target == 0) {
 			res.add(new ArrayList(path));
 			return;
@@ -37,7 +37,7 @@ public class Combination_Sum2 {
 			}
 			if (i > cur && nums[i] == nums[i - 1])
 				continue;
-			path.add(path.size(), nums[i]);
+			path.add(nums[i]);
 			dfs_com(nums, i + 1, target - nums[i], path, res);
 			path.remove(path.size() - 1);
 		}
