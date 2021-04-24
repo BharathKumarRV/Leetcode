@@ -65,6 +65,7 @@ public class Merge_two_sorted_LinkedList_Inplace {
 	        		h1=h1.next;
 	        	}
 	        	tmp.next=h2;
+	        	//swap
 	        	Node temp=h1;
 	         	h1=h2;
 	         	h2=temp;

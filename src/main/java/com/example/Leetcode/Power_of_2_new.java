@@ -6,7 +6,7 @@ public class Power_of_2_new {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		double res = myPow(2.00000, 4);
+		double res = myPow(2.00000, -2);
 		System.out.println(res);
 	}
 

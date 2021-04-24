@@ -5,18 +5,23 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
+import org.springframework.boot.SpringApplication;
+
 public class Word_ladder {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); Set<String> wordList
-	 * = new HashSet<String>(); wordList.add("hot"); wordList.add("dot");
-	 * wordList.add("dog"); wordList.add("lot"); wordList.add("log");
-	 * wordList.add("cog"); int res = ladderLength("hit", "cog", wordList);
-	 * System.out.print(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		Set<String> wordList = new HashSet<String>();
+		wordList.add("hot");
+		wordList.add("dot");
+		wordList.add("dog");
+		wordList.add("lot");
+		wordList.add("log");
+		wordList.add("cog");
+		int res = ladderLength("hit", "cog", wordList);
+		System.out.print(res);
+
+	}
 
 	public static int ladderLength(String beginWord, String endWord, Set<String> wordList) {
 		Set<String> beginSet = new HashSet<String>(), endSet = new HashSet<String>();
@@ -42,6 +47,7 @@ public class Word_ladder {
 						if (new_word.equals(endWord))
 							return level + 1;
 						if (set.contains(new_word)) {
+							System.out.println(new_word);
 							queue.offer(new_word);
 							set.remove(new_word);
 						}

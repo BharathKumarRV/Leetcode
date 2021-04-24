@@ -28,7 +28,7 @@ public class Populating_next_right_pointers_recursive {
 	};
 
 	public static void connect(TreeLinkNode root) {
-		if (root == null || root.left == null)
+		if (root == null || root.left == null || root.right==null)
 			return;
 		root.left.next = root.right;
 		if (root.next != null)
@@ -37,6 +37,18 @@ public class Populating_next_right_pointers_recursive {
 		connect(root.right);
 	}
 
+	
+	public static TreeLinkNode connect_2(TreeLinkNode root) {
+		if (root == null || root.left == null || root.right==null)
+			return root;
+		root.left.next = root.right;
+		if (root.next != null)
+			root.right.next = root.next.left;
+		connect(root.left);
+		connect(root.right);
+		return root;
+	}
+	
 	public static void main(String args[]) {
 
 		Populating_next_right_pointers_recursive tree = new Populating_next_right_pointers_recursive();

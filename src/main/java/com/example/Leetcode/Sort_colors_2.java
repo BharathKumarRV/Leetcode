@@ -31,6 +31,9 @@ public class Sort_colors_2 {
 		}
 	}
 
+	//Dutch-national flag algo
+	//All the elements to the left of low are 0
+	//All the elements to the right of high are 2
 	public static void sortColors2(int[] nums) {
 		int low = 0, mid = 0;
 		int high = nums.length - 1;

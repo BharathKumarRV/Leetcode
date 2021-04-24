@@ -3,6 +3,8 @@ package com.example.Leetcode.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.Leetcode.TreeNode.Binary_tree_preorder_traversal_recursive.TreeNode;
+
 public class Inorder_traversal_recursive {
 
 	TreeNode root;
@@ -24,6 +26,13 @@ public class Inorder_traversal_recursive {
 		list=inorder(root.left, list);
 		list.add(root.val);
 		return inorder(root.right, list);
+	}
+	
+	public static void inorder_2(TreeNode root, List<Integer> list) {
+		if(root==null) return;
+		inorder_2(root.left,list);
+		list.add(root.val);
+		inorder_2(root.right,list);
 	}
 
 

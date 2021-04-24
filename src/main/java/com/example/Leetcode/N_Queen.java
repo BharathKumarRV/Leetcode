@@ -9,7 +9,7 @@ public class N_Queen {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		List<List<String>> res = solveNQueens(4);
+		List<List<String>> res = solveNQueens(3);
 		System.out.println(res);
 
 	}

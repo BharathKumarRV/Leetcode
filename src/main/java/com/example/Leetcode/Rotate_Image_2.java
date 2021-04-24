@@ -9,7 +9,7 @@ public class Rotate_Image_2 {
 		int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 		int rows = matrix.length;
 		int columns = matrix[0].length;
-		rotate(matrix);
+		rotate_2(matrix);
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < columns; j++) {
 				System.out.print(matrix[i][j] + " ");
@@ -36,6 +36,22 @@ public class Rotate_Image_2 {
 				int temp = matrix[i][j];
 				matrix[i][j] = matrix[j][i];
 				matrix[j][i] = temp;
+			}
+		}
+	}
+
+	public static void rotate_2(int[][] matrix) {
+		int n = matrix.length;
+		int[][] reverted = new int[n][n];
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				reverted[j][n - 1 - i] = matrix[i][j];
+			}
+		}
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				matrix[i][j] = reverted[i][j];
 			}
 		}
 	}

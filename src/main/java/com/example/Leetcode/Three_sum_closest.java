@@ -8,8 +8,8 @@ public class Three_sum_closest {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int nums[] = { -1, 2, 1, -4 };
-		int target = 1;
+		int nums[] = { -3, -2, -5, 3, -4 };
+		int target = -1;
 		int res = threeSumClosest_bruteforce(nums, target);
 		System.out.println(res);
 
@@ -17,9 +17,9 @@ public class Three_sum_closest {
 
 	public static int threeSumClosest_bruteforce(int[] nums, int target) {
 
-		int closest = Integer.MAX_VALUE;
+		int closest = nums[0]+nums[1]+nums[nums.length-1];
 
-		//int diffO = Integer.MAX_VALUE;
+		// int diffO = Integer.MAX_VALUE;
 
 		for (int i = 0; i < nums.length - 2; i++) {
 
@@ -31,8 +31,8 @@ public class Three_sum_closest {
 					if (v == target) {
 						return v;
 					} else {
-						if(Math.abs(v-target)<Math.abs(closest-target)) {
-							closest=v;
+						if (Math.abs(v - target) < Math.abs(closest - target)) {
+							closest = v;
 						}
 					}
 				}

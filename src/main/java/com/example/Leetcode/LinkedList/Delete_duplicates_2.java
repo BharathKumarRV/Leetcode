@@ -102,7 +102,7 @@ public class Delete_duplicates_2 {
 		list = insert(list, 4);
 		printList(list);
 		ListNode head = list.head;
-		ListNode res = deleteDuplicates_recursive(head);
+		ListNode res = deleteDuplicates(head);
 		list.head=res;
 		printList(list);
 	}

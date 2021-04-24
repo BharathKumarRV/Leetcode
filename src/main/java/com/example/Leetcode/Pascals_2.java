@@ -7,13 +7,12 @@ import org.springframework.boot.SpringApplication;
 
 public class Pascals_2 {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); List<Integer>
-	 * res=getRow(3); System.out.print(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		List<Integer> res = getRow(3);
+		System.out.print(res);
+
+	}
 
 	public static List<Integer> getRow(int rowIndex) {
 		List<Integer> ret = new ArrayList<Integer>();

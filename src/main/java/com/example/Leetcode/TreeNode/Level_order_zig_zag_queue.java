@@ -26,10 +26,11 @@ public class Level_order_zig_zag_queue {
 		    Queue<TreeNode> q = new LinkedList<>();
 		    q.add(root);
 		    boolean order = true;
-		    int size = 1;
+		    int size = 0;
 
 		    while(!q.isEmpty()) {
 		        List<Integer> tmp = new ArrayList<>();
+		        size = q.size();
 		        for(int i = 0; i < size; ++i) {
 		            TreeNode n = q.poll();
 		            if(order) {
@@ -41,7 +42,6 @@ public class Level_order_zig_zag_queue {
 		            if(n.right != null) q.add(n.right);
 		        }
 		        res.add(tmp);
-		        size = q.size();
 		        order = order ? false : true;
 		    }
 		    return res;

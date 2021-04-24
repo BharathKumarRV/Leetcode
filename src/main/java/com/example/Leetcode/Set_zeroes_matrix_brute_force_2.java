@@ -24,10 +24,12 @@ public class Set_zeroes_matrix_brute_force_2 {
 			for (int j = 0; j < n; j++) {
 				if (matrix[i][j] == 0) {
 					for (int k = 0; k < m; k++)
-						matrix[k][j] = -1;
+						if(matrix[k][j]!=0)
+						   matrix[k][j] = -1;
 
 					for (int k = 0; k < n; k++)
-						matrix[i][k] = -1;
+						if(matrix[i][k]!=0)
+						  matrix[i][k] = -1;
 
 				}
 			}

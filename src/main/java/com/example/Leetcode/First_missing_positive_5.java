@@ -3,13 +3,13 @@ package com.example.Leetcode;
 public class First_missing_positive_5 {
 
 	public static void main(String[] args) {
-		int arr[] = { 0, -1, 2, -10, -20, 3 };
+		int arr[] = { 3, 4, 7, 1 };
 		int arr_size = arr.length;
 		int missing = firstMissingPositive(arr);
 		System.out.println("The smallest positive missing number is " + missing);
 	}
 
-	//https://www.youtube.com/watch?v=-lfHWWMmXXM
+	// https://www.youtube.com/watch?v=-lfHWWMmXXM
 	public static int firstMissingPositive(int A[]) {
 		int n = A.length;
 		for (int i = 0; i < n; ++i) {

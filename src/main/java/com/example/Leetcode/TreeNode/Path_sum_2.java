@@ -28,9 +28,9 @@ public class Path_sum_2 {
 	public static void paths(TreeNode root, int sum,List<Integer> cur,List<List<Integer>> res) {
         if (root == null)
             return;
-        cur.add(root.val);
         if (root.left == null && root.right == null && sum == root.val)
             res.add(new ArrayList<>(cur));
+        cur.add(root.val);
         paths(root.left, sum - root.val,cur,res);
         paths(root.right, sum - root.val,cur,res);
         cur.remove(cur.size() - 1);

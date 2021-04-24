@@ -26,11 +26,11 @@ public class Restore_ip_addresses {
 		if (segment == 4 && buildIndex == s.length()) {
 			allIpAdresses.add(path[0] + "." + path[1] + "." + path[2] + "." + path[3]);
 			return;
-		} else if (segment == 4 || buildIndex == s.length()) {
+		} else if (segment == 4 || buildIndex == s.length()-1) {
 			return;
 		}
 
-		for (int len = 1; len <= 3 && buildIndex + len <= s.length(); len++) {
+		for (int len = 1; len <= 3 && buildIndex + len <=s.length(); len++) {
 			String snapshot = s.substring(buildIndex, buildIndex + len);
 			int val = Integer.parseInt(snapshot);
 			if (val > 255 || len >= 2 && s.charAt(buildIndex) == '0') {

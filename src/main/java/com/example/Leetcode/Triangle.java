@@ -8,14 +8,13 @@ import org.springframework.boot.SpringApplication;
 
 public class Triangle {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); List<List<Integer>>
-	 * res = generate(5); System.out.print(res);
-	 * 
-	 * }
-	 */
-	
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		List<List<Integer>> res = generate(5);
+		System.out.print(res);
+
+	}
+
 	public static List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> list = new ArrayList<>();
 		List<Integer> slist = new ArrayList<>(Arrays.asList(-1));
@@ -50,6 +49,34 @@ public class Triangle {
 			res += slist.get(j);
 		}
 		return res;
+	}
+
+	public static int minimumTotal_2(List<List<Integer>> triangle) {
+		if (triangle.size() == 0)
+			return 0;
+
+		for (int i = triangle.size() - 2; i >= 0; i--) {
+			for (int j = 0; j <= i; j++) {
+				List<Integer> nextRow = triangle.get(i + 1);
+				int sum = Math.min(nextRow.get(j), nextRow.get(j + 1)) + triangle.get(i).get(j);
+				triangle.get(i).set(j, sum);
+			}
+		}
+		return triangle.get(0).get(0);
+	}
+
+	public static int minimumTotal_3(List<List<Integer>> triangle) {
+		if (triangle.size() == 0)
+			return 0;
+
+		List<Integer> dp = new ArrayList<Integer>(triangle.get(triangle.size() - 1));
+
+		for (int i = triangle.size() - 2; i >= 0; i--) {
+			for (int j = 0; j <= i; j++) {
+				dp.set(j, Math.min(dp.get(j), dp.get(j + 1)) + triangle.get(i).get(j));
+			}
+		}
+		return dp.get(0);
 	}
 
 }

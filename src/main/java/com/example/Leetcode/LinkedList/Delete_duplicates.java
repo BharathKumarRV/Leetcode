@@ -92,7 +92,7 @@ public class Delete_duplicates {
 		ListNode head = list.head;
 		ListNode dummy = new ListNode(0);
 		dummy.next = head;
-		ListNode res = deleteDuplicates_method2(dummy);
+		ListNode res = deleteDuplicates(dummy);
 		printList(res.next);
 	}
 

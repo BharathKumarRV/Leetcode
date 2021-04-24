@@ -6,7 +6,7 @@ public class Plus_one {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int digits[] = {9};
+		int digits[] = {1,2,0};
 		int res[] = plusOne(digits);
 		for (int i = 0; i < res.length; i++) {
 			System.out.print(res[i] + " ");

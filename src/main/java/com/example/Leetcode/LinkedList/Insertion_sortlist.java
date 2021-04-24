@@ -6,10 +6,10 @@ public class Insertion_sortlist {
 	
 	static class ListNode {
 		ListNode prev, next;
-		int value;
+		int val;
 
 		ListNode(int _value) {
-			value = _value;
+			val = _value;
 		}
 	}
 	
@@ -49,9 +49,9 @@ public class Insertion_sortlist {
 	           Only the last node's value is larger than the current inserting node 
 	           should we move the  back to the head*/
 	        //whenever we find head less than prev pointer need scan elements from beginning
-	        if (prev.value >= head.value) prev = dummy;
+	        if (prev.val >= head.val) prev = dummy;
 
-	        while (prev.next != null && head.value>prev.next.value) {
+	        while (prev.next != null && head.val>prev.next.val) {
 	            prev = prev.next;
 	        }
 	        
@@ -63,6 +63,26 @@ public class Insertion_sortlist {
 	    return dummy.next;
 	}
 	
+	public static ListNode insertionSortList_2(ListNode head) {
+        ListNode start = new ListNode(0);
+        start.next = head;
+        ListNode curr = head, prev = start;
+        while(curr != null){
+            if(curr.next != null && (curr.next.val < curr.val)){
+                // Insertion 
+                while(prev.next != null && (prev.next.val < curr.next.val))
+                    prev = prev.next;
+                ListNode temp = prev.next;
+                prev.next = curr.next;
+                curr.next = curr.next.next;
+                prev.next.next = temp;
+                prev = start;
+            } else
+                curr = curr.next;
+        }
+        return start.next;
+    }
+	
 	public static void main(String[] args) {
 		/* Start with the empty list. */
 		// LRU_cache list = new LRU_cache();
@@ -72,7 +92,7 @@ public class Insertion_sortlist {
 		list=insert(list,3);
 		list=insert(list,4);
 		list=insert(list,0);
-		ListNode res=insertionSortList(list.head);
+		ListNode res=insertionSortList_2(list.head);
 		System.out.println(res);
 
 	}

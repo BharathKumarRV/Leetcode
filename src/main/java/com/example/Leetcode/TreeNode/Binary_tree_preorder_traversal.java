@@ -3,6 +3,9 @@ package com.example.Leetcode.TreeNode;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
+
+import com.example.Leetcode.TreeNode.Binary_tree_postorder_traversal_iterative.TreeNode;
 
 public class Binary_tree_preorder_traversal {
 
@@ -21,7 +24,8 @@ public class Binary_tree_preorder_traversal {
 
 	public static List<Integer> preorderTraversal(TreeNode root) {
 		List<Integer> result = new LinkedList<>();
-		Deque<TreeNode> stack = new LinkedList<>();
+		//Deque<TreeNode> stack = new LinkedList<>();
+		Stack<TreeNode> stack = new Stack<>();
 		if(root==null) return result;
 		stack.push(root);
 		while (!stack.isEmpty()) {

@@ -41,29 +41,40 @@ public class Linkedlist_cycle {
 		return list;
 	}
 
-	/*
-	 * public static boolean hasCycle(ListNode head) { ListNode walker = head;
-	 * ListNode runner = head; while (runner != null && runner.next != null) {
-	 * walker = walker.next; runner = runner.next.next; if (walker == runner) return
-	 * true; } return false; }
-	 */
+	public static boolean hasCycle_1(ListNode head) {
+		ListNode walker = head;
+		ListNode runner = head;
+		while (runner != null && runner.next != null) {
+			walker = walker.next;
+			runner = runner.next.next;
+			if (walker == runner)
+				return true;
+		}
+		return false;
+	}
 
-	/*
-	 * public static boolean hasCycle(ListNode head) { if (head == null || head.next
-	 * == null) return false; HashSet<ListNode> nodeSet = new HashSet<>(); while
-	 * (head != null) { if (nodeSet.contains(head)) return true; nodeSet.add(head);
-	 * head = head.next; } return false; }
-	 */
+	public static boolean hasCycle_2(ListNode head) {
+		if (head == null || head.next == null)
+			return false;
+		HashSet<ListNode> nodeSet = new HashSet<>();
+		while (head != null) {
+			if (nodeSet.contains(head))
+				return true;
+			nodeSet.add(head);
+			head = head.next;
+		}
+		return false;
+	}
 
 	private static HashSet<ListNode> nodeSet = new HashSet<>();
 
-	public static boolean hasCycle(ListNode head) {
+	public static boolean hasCycle_3(ListNode head) {
 		if (head == null || head.next == null)
 			return false;
 		if (nodeSet.contains(head))
 			return true;
 		nodeSet.add(head);
-		boolean res = hasCycle(head.next);
+		boolean res = hasCycle_3(head.next);
 		return res;
 	}
 
@@ -82,7 +93,7 @@ public class Linkedlist_cycle {
 		}
 		cur.next = list.head.next;
 
-		boolean res = hasCycle(list.head);
+		boolean res = hasCycle_1(list.head);
 		System.out.println(res);
 
 	}

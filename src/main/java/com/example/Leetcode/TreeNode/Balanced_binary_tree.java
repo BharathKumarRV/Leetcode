@@ -1,9 +1,5 @@
 package com.example.Leetcode.TreeNode;
 
-import java.util.List;
-
-import com.example.Leetcode.TreeNode.Sorted_array_to_bst_iterative_2.TreeNode;
-
 public class Balanced_binary_tree {
 
 	TreeNode root;

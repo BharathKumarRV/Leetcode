@@ -9,9 +9,9 @@ public class First_missing_positive_bruteforce {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int[] nums = { 1, 2, 3 };
+		int[] nums = { 1 };
 		int res;
-		res = firstMissingPositive(nums);
+		res = firstMissingPositive_2(nums);
 		System.out.println(res);
 
 	}
@@ -27,6 +27,30 @@ public class First_missing_positive_bruteforce {
 			}
 		}
 		return A.length + 1;
+	}
+
+	public static int firstMissingPositive_2(int[] A) {
+		int max = 0;
+		for (int i : A) {
+			if (i > max) {
+				max = i;
+			}
+		}
+		int count[] = new int[max];
+
+		for (int i : A) {
+			if (i != 0) {
+				count[i - 1] = 1;
+			}
+		}
+
+		for (int i = 0; i < count.length; i++) {
+			if (count[i] == 0) {
+				return i + 1;
+			}
+		}
+
+		return -1;
 	}
 
 }

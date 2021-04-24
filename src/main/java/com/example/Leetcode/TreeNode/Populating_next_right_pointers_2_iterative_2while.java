@@ -60,6 +60,30 @@ public class Populating_next_right_pointers_2_iterative_2while {
 	        }
 	    }
 	 
+	 //Go through this
+	 public static void helper_2(TreeLinkNode root) {
+			if (root == null)
+				return;
+			TreeLinkNode head = root;
+			while (head != null) {
+				TreeLinkNode nextDummyHead = new TreeLinkNode(0);
+				TreeLinkNode temp = nextDummyHead;
+				while (head != null) {
+					if (head.left != null) {
+						temp.next = head.left;
+						temp = temp.next;
+					}
+					if (head.right != null) {
+						temp.next = head.right;
+						temp = temp.next;
+					}
+					head = head.next;
+				}
+
+				head = nextDummyHead.next;
+			}
+		}
+	 
 	 public static void main(String args[]) {
 
 			Populating_next_right_pointers_2_iterative_2while tree = new Populating_next_right_pointers_2_iterative_2while();

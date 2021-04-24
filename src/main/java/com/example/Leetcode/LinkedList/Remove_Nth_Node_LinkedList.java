@@ -51,12 +51,11 @@ public class Remove_Nth_Node_LinkedList {
 		SpringApplication.run(LeetcodeApplication.class, args);
 		Remove_Nth_Node_LinkedList list = new Remove_Nth_Node_LinkedList();
 		list = insert(list, 1);
-		list = insert(list, 1);
-		list = insert(list, 3);
-		list = insert(list, 4);
-		list = insert(list, 5);
-		list = insert(list, 1);
-		ListNode res = removeNthFromEnd(head, 2);
+		/*
+		 * list = insert(list, 1); list = insert(list, 3); list = insert(list, 4); list
+		 * = insert(list, 5); list = insert(list, 1);
+		 */
+		ListNode res = removeNthFromEnd(head, 1);
 		System.out.println(res);
 
 	}

@@ -22,7 +22,26 @@ public class Unique_Binary_search_tree {
 		sol[1] = 1;
 		for (int i = 2; i <= n; i++)
 			for (int j = 0; j < i; j++)
-				sol[i] += sol[i - j - 1] * sol[j];
+				sol[i] += sol[i - j - 1] * sol[j]; // catalan number
+		return sol[n];
+	}
+
+	public static int numTrees_2(int n) {
+		if (n < 2) {
+			return 1;
+		}
+		int[] sol = new int[n + 1];
+		sol[0] = 1;
+		sol[1] = 1;
+
+		for (int i = 2; i <= n; i++) {
+			int left = 0;
+			int right = i - 1;
+			sol[i]+=sol[left]*sol[right];
+			left++;
+			right--;
+		}
+		
 		return sol[n];
 	}
 

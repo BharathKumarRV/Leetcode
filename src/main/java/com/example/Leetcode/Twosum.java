@@ -41,6 +41,7 @@ public class Twosum {
 				if (current + nums[j] == target) {
 					indices[0] = i;
 					indices[1] = j;
+					
 				}
 			}
 		}

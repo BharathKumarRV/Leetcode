@@ -31,9 +31,10 @@ public class Populating_next_right_pointers_2_iterative {
 	};
 
 	public static TreeLinkNode connect(TreeLinkNode root) {
-		helper(root);
+		helper_2(root);
 		return root;
 	}
+
 	public static void helper(TreeLinkNode root) {
 		if (root == null)
 			return;
@@ -56,6 +57,29 @@ public class Populating_next_right_pointers_2_iterative {
 				nextDummyHead.next = null;
 				p = nextDummyHead;
 			}
+		}
+	}
+
+	public static void helper_2(TreeLinkNode root) {
+		if (root == null)
+			return;
+		TreeLinkNode head = root;
+		while (head != null) {
+			TreeLinkNode nextDummyHead = new TreeLinkNode(0);
+			TreeLinkNode temp = nextDummyHead;
+			while (head != null) {
+				if (head.left != null) {
+					temp.next = head.left;
+					temp = temp.next;
+				}
+				if (head.right != null) {
+					temp.next = head.right;
+					temp = temp.next;
+				}
+				head = head.next;
+			}
+
+			head = nextDummyHead.next;
 		}
 	}
 

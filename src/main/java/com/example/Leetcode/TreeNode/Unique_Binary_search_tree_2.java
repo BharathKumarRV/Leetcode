@@ -31,7 +31,7 @@ public class Unique_Binary_search_tree_2 {
 			return list;
 		}
 
-		//Not needed
+		// Not needed
 		if (start == end) {
 			list.add(new TreeNode(start));
 			return list;
@@ -78,6 +78,7 @@ public class Unique_Binary_search_tree_2 {
 		/*
 		 * creating a binary tree and entering the nodes
 		 */
+
 		/*
 		 * Unique_Binary_search_tree_2 tree = new Unique_Binary_search_tree_2();
 		 * tree.root = new TreeNode(1); tree.root.left = new TreeNode(2);
@@ -85,7 +86,7 @@ public class Unique_Binary_search_tree_2 {
 		 * tree.root.left.right = new TreeNode(5);
 		 */
 
-		List<TreeNode> res = generateTrees(3);
+		List<TreeNode> res = generateTrees(2);
 		for (int i = 0; i < res.size(); i++) {
 			preorder(res.get(i));
 			System.out.println();

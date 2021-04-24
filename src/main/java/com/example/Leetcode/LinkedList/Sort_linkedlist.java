@@ -1,6 +1,6 @@
 package com.example.Leetcode.LinkedList;
 
-import com.example.Leetcode.LinkedList.Insertion_sortlist_recursive.ListNode;
+
 
 public class Sort_linkedlist {
 

@@ -32,11 +32,13 @@ public class Combination_Sum2 {
 		if (target < 0)
 			return;
 		for (int i = cur; i < nums.length; i++) {
-			if(nums[i]>target) {
+			if (nums[i] > target) {
 				return;
 			}
-			if (i > cur && nums[i] == nums[i - 1])
+			if (i > cur && nums[i] == nums[i - 1]) {
+				System.out.println("skipping");
 				continue;
+			}
 			path.add(nums[i]);
 			dfs_com(nums, i + 1, target - nums[i], path, res);
 			path.remove(path.size() - 1);

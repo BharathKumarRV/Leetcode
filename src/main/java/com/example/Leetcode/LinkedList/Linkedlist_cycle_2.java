@@ -16,7 +16,7 @@ public class Linkedlist_cycle_2 {
 		}
 
 	}
-	
+
 	public static Linkedlist_cycle_2 insert(Linkedlist_cycle_2 list, int data) {
 		// Create a new node with given data
 		ListNode new_node = new ListNode(data);
@@ -41,27 +41,27 @@ public class Linkedlist_cycle_2 {
 		// Return the list by head
 		return list;
 	}
-	
-	public static ListNode detectCycle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
 
-        while (fast!=null && fast.next!=null){
-            fast = fast.next.next;
-            slow = slow.next;
-            
-            if (fast == slow){
-                ListNode start = head; 
-                while (start != slow){
-                    slow = slow.next;
-                    start = start.next;
-                }
-                return slow;
-            }
-        }
-        return null;
-    }
-	
+	public static ListNode detectCycle(ListNode head) {
+		ListNode slow = head;
+		ListNode fast = head;
+
+		while (fast != null && fast.next != null) {
+			fast = fast.next.next;
+			slow = slow.next;
+
+			if (fast == slow) {
+				ListNode start = head;
+				while (start != slow) {
+					slow = slow.next;
+					start = start.next;
+				}
+				return slow;
+			}
+		}
+		return null;
+	}
+
 	/*
 	 * public static ListNode detectCycle(ListNode head) { // creating set for add
 	 * the visited nodes while traversing Set<ListNode> set = new HashSet<>();
@@ -77,8 +77,8 @@ public class Linkedlist_cycle_2 {
 	 * 
 	 * return ptr; }
 	 */
-	 
-	//https://leetcode.com/problems/linked-list-cycle-ii/discuss/44893/My-two-cents-still-O(1)-memory-and-O(n)-time
+
+	// https://leetcode.com/problems/linked-list-cycle-ii/discuss/44893/My-two-cents-still-O(1)-memory-and-O(n)-time
 	public static void main(String[] args) {
 		/* Start with the empty list. */
 		Linkedlist_cycle_2 list = new Linkedlist_cycle_2();

@@ -12,7 +12,7 @@ public class Longest_substring {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = lengthOfLongestSubstring_bruteforce("abcabcbb");
+		int res = lengthOfLongestSubstring_3("abcabcbb");
 		System.out.println(res);
 
 	}
@@ -110,7 +110,7 @@ public class Longest_substring {
         int n = s.length();
         ans = 1;
         
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n-1; i++) {
             HashSet<Character> set = new HashSet<> ();
             set.add(s.charAt(i));
             int record_num = 1;

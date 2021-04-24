@@ -59,7 +59,7 @@ public class Sudoko_Solver {
 
 	private static boolean isValid(char[][] board, int row, int col, char c) {
 		//Top left element position is obtained by row/3*3 and column/3*3
-		int blkrow = (row / 3) * 3, blkcol = (col / 3) * 3; // Block no. is i/3, first element is i/3*3
+		int blkrow = (row / 3) * 3, blkcol = (col / 3) * 3; //First element of block is obtained with this
 		for (int i = 0; i < 9; i++)
 			if (board[i][col] == c || board[row][i] == c || board[blkrow + i / 3][blkcol + i % 3] == c)
 				return false;

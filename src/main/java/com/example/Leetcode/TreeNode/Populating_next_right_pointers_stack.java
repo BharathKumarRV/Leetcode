@@ -28,6 +28,7 @@ public class Populating_next_right_pointers_stack {
 		}
 	};
 
+	//Works for both 1 and 2 versions 
 	public static TreeLinkNode connect(TreeLinkNode root) {
 		if(root== null) return root;
 	    Queue<TreeLinkNode>q = new LinkedList<>();

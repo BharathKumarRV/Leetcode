@@ -9,6 +9,8 @@ public class Add_Binary_recursion {
 		String res = addBinary("1010", "1011");
 		System.out.println(res);
 	}
+	
+	
 
 	public static String addBinary(String a, String b) {
 		if (a == null || a.isEmpty() || b == null || b.isEmpty())

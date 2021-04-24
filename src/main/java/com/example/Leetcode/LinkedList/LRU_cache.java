@@ -65,12 +65,13 @@ public class LRU_cache {
 	public static void main(String[] args) {
 		/* Start with the empty list. */
 		// LRU_cache list = new LRU_cache();
-		LRU_cache cache=new LRU_cache(1);
-		put(2, 1);
+		LRU_cache cache=new LRU_cache(2);
+		put(1, 100);
+		put(2, 101);
 		int res = get(2);
 		System.out.println(res);
-		put(3, 2);
-		int res1 = get(2);
+		put(3, 102);
+		int res1 = get(1);
 		System.out.println(res1);
 		int res2 = get(3);
 		System.out.println(res2);

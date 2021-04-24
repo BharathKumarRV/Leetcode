@@ -7,13 +7,13 @@ import org.springframework.boot.SpringApplication;
 
 public class Palindromic_partition {
 
-	/*
-	 * public static void main(String[] args) {
-	 * SpringApplication.run(LeetcodeApplication.class, args); String s = "aab";
-	 * List<List<String>> res = partition(s); System.out.println(res);
-	 * 
-	 * }
-	 */
+	public static void main(String[] args) {
+		SpringApplication.run(LeetcodeApplication.class, args);
+		String s = "aab";
+		List<List<String>> res = partition(s);
+		System.out.println(res);
+
+	}
 
 	public static List<List<String>> partition(String s) {
 		// Backtracking
