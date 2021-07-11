@@ -48,6 +48,7 @@ public class Reorder_list_2 {
 		ListNode cur=head;
 		while(cur!=null) {
 			st.push(cur);
+			cur=cur.next;
 		}
 		
 		int n=st.size();

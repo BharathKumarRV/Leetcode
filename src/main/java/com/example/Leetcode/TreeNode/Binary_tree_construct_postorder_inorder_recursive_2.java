@@ -17,17 +17,17 @@ public class Binary_tree_construct_postorder_inorder_recursive_2 {
 	}
 	
 	private static TreeNode build_tree_rec(int[] inorder, int i1, int i2, int[] postorder, int p1, int p2){
-        if(i1 >=i2 || p1 >= p2) return null;
-        TreeNode root = new TreeNode(postorder[p2-1]);
+        if(i1 >i2 || p1 > p2) return null;
+        TreeNode root = new TreeNode(postorder[p2]);
         int it = 0;
-        for(int i = i1; i <i2; ++i){
-            if(postorder[p2-1] == inorder[i]) {
+        for(int i = i1; i <=i2; ++i){
+            if(postorder[p2] == inorder[i]) {
                 it = i;
                 break;
             }
         }
         int diff = it - i1; //How far the element is from start
-        root.left = build_tree_rec(inorder, i1, i1 + diff, postorder, p1, p1+diff); //p1+diff since same number of elements are present in left subtree postorder
+        root.left = build_tree_rec(inorder, i1, i1 + diff, postorder, p1, p1+diff-1); //p1+diff since same number of elements are present in left subtree postorder
         root.right = build_tree_rec(inorder, i1+diff+1, i2, postorder, p1+diff, p2-1);
         
         //i1+diff+1 since we have to count elements after root(L,root,R)
@@ -40,7 +40,7 @@ public class Binary_tree_construct_postorder_inorder_recursive_2 {
         int n = inorder.length;
         if(n == 0) return null;
         
-        return build_tree_rec(inorder, 0, n, postorder, 0, n);
+        return build_tree_rec(inorder, 0, n-1, postorder, 0, n-1);
     }
 	
 	

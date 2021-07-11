@@ -33,14 +33,33 @@ public class Linkedlist_intersection {
 		 */
 		    // find the intersection until end
 		    while (headA !=null && headB!=null) {
-		    	if(headA.val==headB.val) {
+		    	if(headA==headB) {
 		    		return headA;
 		    	}
 		        headA = headA.next;
 		        headB = headB.next;
 		    }
-		    return headA;
+		    return null;
 	}
+	
+	 public static ListNode getIntersectionNode_2(ListNode headA, ListNode headB) {
+     	if (headA == null || headB == null)
+			return null;
+
+		ListNode a = headA;
+		ListNode b = headB;
+
+		// if a & b have different len, then we will stop the loop after second
+		// iteration
+		while (a!= b) {
+			// for the end of first iteration, we just reset the pointer to the head of
+			// another linkedlist
+			a = a == null ? headB : a.next;
+			b = b == null ? headA : b.next;
+		}
+
+		return a;
+ }
 	
 	private static int length(ListNode node) {
 	    int length = 0;
@@ -72,7 +91,7 @@ public class Linkedlist_intersection {
 		list.head2.next.next.next.next.next = new ListNode(5);
 
 		// Print the LinkedList
-		ListNode res = getIntersectionNode(list.head1, list.head2);
+		ListNode res = getIntersectionNode_2(list.head1, list.head2);
 		System.out.println(res.val);
 
 	}

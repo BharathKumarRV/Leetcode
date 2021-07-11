@@ -2,6 +2,7 @@ package com.example.Leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.boot.SpringApplication;
@@ -17,16 +18,16 @@ public class Triangle {
 
 	public static List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> list = new ArrayList<>();
-		List<Integer> slist = new ArrayList<>(Arrays.asList(-1));
+		List<Integer> slist = new ArrayList<>(Arrays.asList(2));
 		list.add(slist);
-		List<Integer> slist1 = new ArrayList<>(Arrays.asList(2, 3));
+		List<Integer> slist1 = new ArrayList<>(Arrays.asList(3, 4));
 		list.add(slist1);
-		List<Integer> slist2 = new ArrayList<>(Arrays.asList(1, -1, -3));
+		List<Integer> slist2 = new ArrayList<>(Arrays.asList(6, 5, 7));
 		list.add(slist2);
-		// List<Integer> slist3=new ArrayList<>(Arrays.asList(4,1,8,3));
-		// list.add(slist3);
+		List<Integer> slist3=new ArrayList<>(Arrays.asList(4,1,8,3));
+		list.add(slist3);
 
-		int res = minimumTotal(list);
+		int res = minimumTotal_topdown(list);
 		System.out.println(res);
 		return list;
 
@@ -78,5 +79,40 @@ public class Triangle {
 		}
 		return dp.get(0);
 	}
+	
+	
+	 public static int minimumTotal_topdown(List<List<Integer>> triangle) {
+	        for(int i = 1; i < triangle.size(); i++) {
+	            for(int j = 0; j < triangle.get(i).size(); j++){
+	                int sum = 0; 
+	                if(j == 0) {
+	                    sum = triangle.get(i).get(j) + triangle.get(i-1).get(j);
+	                }
+	                else if(j == triangle.get(i).size()-1) {
+	                    sum = triangle.get(i).get(j) + triangle.get(i-1).get(triangle.get(i-1).size()-1);
+	                }
+	                else {
+	                    int min = Math.min(triangle.get(i-1).get(j), triangle.get(i-1).get(j-1));
+	                    sum = min+ triangle.get(i).get(j);
+	                }
+	                
+	                triangle.get(i).set(j, sum);
+	            }
+	        }
+	        return Collections.min(triangle.get(triangle.size()-1));
+	    }
+	 
+	 public static int minimumTotal_bottomup(List<List<Integer>> triangle) {
+	        for(int i = triangle.size()-2; i >= 0; i--) {
+	            for(int j = 0; j < triangle.get(i).size(); j++) {
+	                int min = Math.min(triangle.get(i+1).get(j), triangle.get(i+1).get(j+1));
+	                int sum = min + triangle.get(i).get(j);
+	                triangle.get(i).set(j, sum);
+	            }
+	        }
+	        return triangle.get(0).get(0);
+	    }
+	
+	
 
 }

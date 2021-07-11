@@ -62,12 +62,14 @@ public class LRU_cache {
 		}
 	}
 
+	//https://www.youtube.com/watch?v=Hi5obC_CwIU
 	public static void main(String[] args) {
 		/* Start with the empty list. */
 		// LRU_cache list = new LRU_cache();
-		LRU_cache cache=new LRU_cache(2);
+		LRU_cache cache=new LRU_cache(3);
 		put(1, 100);
 		put(2, 101);
+		put(3, 102);
 		int res = get(2);
 		System.out.println(res);
 		put(3, 102);

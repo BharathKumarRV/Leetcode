@@ -92,7 +92,7 @@ public class Insertion_sortlist {
 		list=insert(list,3);
 		list=insert(list,4);
 		list=insert(list,0);
-		ListNode res=insertionSortList_2(list.head);
+		ListNode res=insertionSortList(list.head);
 		System.out.println(res);
 
 	}

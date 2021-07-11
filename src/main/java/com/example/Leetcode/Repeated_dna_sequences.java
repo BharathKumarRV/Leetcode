@@ -21,6 +21,7 @@ public class Repeated_dna_sequences {
 	 * repeated.add(ten); } return new ArrayList(repeated); }
 	 */
 
+	//Time complexity of this approach is O(m*n) where m=length of string, n=
 	public static List<String> findRepeatedDnamap(String s) {
 		List<String> repeated = new ArrayList<String>();
 		HashMap<String, Integer> map = new HashMap<String, Integer>();

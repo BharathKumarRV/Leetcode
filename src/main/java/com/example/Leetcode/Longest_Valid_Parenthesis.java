@@ -37,7 +37,7 @@ public class Longest_Valid_Parenthesis {
 		return max;
 
 	}
-	
+
 	public static int longestValidParentheses_2(String s) {
 
 		Stack<Integer> stack = new Stack<Integer>();
@@ -50,12 +50,38 @@ public class Longest_Valid_Parenthesis {
 				if (stack.isEmpty())
 					left = j;
 				else {
-					    stack.pop();
-						max = Math.max(max, j - stack.peek());
+					stack.pop();
+					max = Math.max(max, j - stack.peek());
 				}
 			}
 		}
 		return max;
 
 	}
+
+	public static int longestValidParentheses_3(String s) {
+
+		Stack<Integer> st = new Stack<>();
+		st.push(-1);
+		int max = 0;
+		for (int i = 0; i < s.length(); i++) {
+
+			char c = s.charAt(i);
+
+			if (c == '(') {
+				st.push(i);
+			} else {
+				st.pop();
+				if (st.isEmpty()) {
+					st.push(i);
+				} else {
+					int len = i - st.peek();
+					max = Math.max(max, len);
+				}
+			}
+		}
+
+		return max;
+	}
+
 }

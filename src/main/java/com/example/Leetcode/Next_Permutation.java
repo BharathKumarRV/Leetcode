@@ -11,6 +11,24 @@ public class Next_Permutation {
 
 	}
 
+	public static void nextPermutation_2(int[] num) {
+		if (num == null || num.length <= 1)
+			return;
+		int i = num.length - 2;
+		while (i >= 0 && num[i] >= num[i + 1]) {
+			i--;
+		}
+
+		if (i >= 0) {
+			int j = num.length - 1;
+			while (num[j] <= num[i])
+				j--;
+			swap(num, i, j);
+		}
+		reverseSort(num, i + 1, num.length - 1);
+
+	}
+
 	public static void nextPermutation(int[] num) {
 		int n = num.length;
 		if (n < 2)

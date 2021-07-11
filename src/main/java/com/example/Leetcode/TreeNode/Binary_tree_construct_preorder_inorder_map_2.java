@@ -24,19 +24,19 @@ public class Binary_tree_construct_preorder_inorder_map_2 {
 		for (int i = 0; i < inorder.length; i++) {
 			map.put(inorder[i], i);
 		}
-		return helper(preorder, 0, preorder.length, inorder, 0, inorder.length, map);
+		return helper(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1, map);
 	}
 
 	public static TreeNode helper(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd,
 			Map<Integer, Integer> map) {
-		if (inStart >= inEnd) {
+		if (preStart > preEnd || inStart > inEnd) {
 			return null;
 		}
 		TreeNode root = new TreeNode(preorder[preStart]);
 		int inIndex = map.get(preorder[preStart]);
 		int diff = inIndex - inStart;
-		root.left = helper(preorder, preStart+1, preStart+diff, inorder, inStart, inStart + diff, map);
-		root.right = helper(preorder, preStart+diff+1, preEnd, inorder, inStart + diff + 1, inEnd, map);
+		root.left = helper(preorder, preStart + 1, preStart + diff, inorder, inStart, inStart + diff, map);
+		root.right = helper(preorder, preStart + diff + 1, preEnd, inorder, inStart + diff + 1, inEnd, map);
 		return root;
 	}
 

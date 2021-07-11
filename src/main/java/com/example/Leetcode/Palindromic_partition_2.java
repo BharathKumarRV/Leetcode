@@ -32,7 +32,7 @@ public class Palindromic_partition_2 {
 			result.add(new ArrayList<>(step));
 			return;
 		}
-		for (int i = index; i <= s.length(); i++) {
+		for (int i = index; i <s.length(); i++) {
 			String temp = s.substring(index, i + 1);
 			if (!isPalindrome(temp))
 				continue; // only do backtracking when current string is palindrome

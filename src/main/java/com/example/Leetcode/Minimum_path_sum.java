@@ -24,7 +24,7 @@ public class Minimum_path_sum {
 
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
-				paths[i][j] += Grid[i][j];
+				paths[i][j] = Grid[i][j];
 
 				if (i > 0 && j > 0) {
 					paths[i][j] += Math.min(paths[i - 1][j], paths[i][j - 1]);

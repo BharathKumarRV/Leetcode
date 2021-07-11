@@ -17,12 +17,12 @@ public class Buy_sell_stocks {
 			return 0;
 		}
 		int max = 0;
-		int sofarMin = Integer.MAX_VALUE;
+		int sofarMin = prices[0];
 		for (int i = 0; i < prices.length; ++i) {
 			if (prices[i] < sofarMin) {
 				sofarMin = prices[i];
-			} else {
-				max = Math.max(max, prices[i] - sofarMin);
+			} else if((prices[i] - sofarMin) > max){
+				max = prices[i] - sofarMin;
 			}
 		}
 		return max;

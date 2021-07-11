@@ -34,11 +34,10 @@ public class Binary_tree_right_view {
 				TreeNode cur = queue.poll();
 				if (size == 0)
 					res.add(cur.val);
-
 				if (cur.left != null)
 					queue.offer(cur.left);
-				if (cur.right != null)
-					queue.offer(cur.right);
+				if (cur.right != null)  // Interchange these for left side view
+					queue.offer(cur.right);		
 			}
 		}
 

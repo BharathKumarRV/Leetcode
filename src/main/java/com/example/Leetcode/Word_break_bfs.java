@@ -12,13 +12,16 @@ public class Word_break_bfs {
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
 		int[] nums = { 4, 1, 2, 1, 2 };
-		String s="catsandog";
+		//String s="catsandog";
+		String s="leetcode";
 		Set<String> dict= new HashSet<>();
-		dict.add("cats");
-		dict.add("dog");
-		dict.add("sand");
-		dict.add("and");
-		dict.add("cat");
+		//dict.add("cats");
+		//dict.add("dog");
+		//dict.add("sand");
+		//dict.add("and");
+		//dict.add("cat");
+		dict.add("leet");
+		dict.add("code");
 		boolean res = wordBreak(s,dict);
 		System.out.println(res);
 

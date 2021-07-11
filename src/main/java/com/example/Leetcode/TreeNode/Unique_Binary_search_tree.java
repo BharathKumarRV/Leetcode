@@ -8,7 +8,7 @@ public class Unique_Binary_search_tree {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = numTrees(2);
+		int res = numTrees_2(3);
 		System.out.println(res);
 
 	}
@@ -37,11 +37,13 @@ public class Unique_Binary_search_tree {
 		for (int i = 2; i <= n; i++) {
 			int left = 0;
 			int right = i - 1;
-			sol[i]+=sol[left]*sol[right];
-			left++;
-			right--;
+			while (left <= i-1) {
+				sol[i] += sol[left] * sol[right];
+				left++;
+				right--;
+			}
 		}
-		
+
 		return sol[n];
 	}
 

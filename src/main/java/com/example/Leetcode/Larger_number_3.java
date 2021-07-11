@@ -8,7 +8,7 @@ public class Larger_number_3 {
 		System.out.println(res);
 	}
 
-	static int nums[] = { 10, 2 };
+	static int nums[] = { 3, 30, 34, 5, 9 };
 
 	public static String largestNumber(int[] nums) {
 		StringBuffer sb = new StringBuffer("");
@@ -29,10 +29,10 @@ public class Larger_number_3 {
 			i++;
 		}
 
-		if(nums[0]==0) {
+		if (nums[0] == 0) {
 			return "0";
 		}
-		
+
 		for (int k = 0; k < nums.length; k++) {
 			sb.append(String.valueOf(nums[k]));
 		}

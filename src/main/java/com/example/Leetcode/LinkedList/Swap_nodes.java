@@ -65,6 +65,21 @@ public class Swap_nodes {
 		n.next = head;
 		return n;
 	}
+	
+	 public static ListNode swapPairs_4(ListNode head) {
+	        ListNode dummy = new ListNode(0);
+	    dummy.next = head;
+	    ListNode current = dummy;
+	    while (current.next != null && current.next.next != null) {
+	        ListNode first = current.next;
+	        ListNode second = current.next.next;
+	        first.next = second.next;
+	        current.next = second;
+	        current.next.next = first;
+	        current = current.next.next;
+	    }
+	    return dummy.next;
+	    }
 
 	public static ListNode swapPairs_2(ListNode head) {
 		ListNode start = new ListNode(0);
@@ -119,7 +134,7 @@ public class Swap_nodes {
 
 		// Print the LinkedList
 		printList(list);
-		ListNode n = swapPairs_3(list.head);
+		ListNode n = swapPairs_4(list.head);
 		printList(list);
 	}
 }

@@ -10,8 +10,8 @@ public class ValidParenthesis {
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
 		LeetcodeApplication la = new LeetcodeApplication();
-		String s = "[()]";
-		boolean res =isValid_2(s);
+		String s = "()";
+		boolean res =isValid_3(s);
 		System.out.println(res);
 
 	}
@@ -31,6 +31,19 @@ public class ValidParenthesis {
 		}
 		return stack.isEmpty();
 
+	}
+	
+	 public static boolean isValid_3(String s) {
+	        Stack<Character> stack = new Stack<Character>();
+	       for(int i = 0; i<s.length(); i++) {
+		            // Push any open parentheses onto stack
+		            if(s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{')
+		                stack.push(s.charAt(i));
+	                else if (stack.isEmpty() || stack.pop() != s.charAt(i))
+					    return false;
+	         }
+	        
+	          return stack.isEmpty();
 	}
 	
 	

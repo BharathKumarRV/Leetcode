@@ -3,7 +3,7 @@ package com.example.Leetcode;
 public class Compare_version_numbers_nosplit {
 
 	public static void main(String[] args) {
-		int res = compareVersion("7.5.2.4", "7.5.3");
+		int res = compareVersion("1.1", "1.1.1");
 		System.out.println(res);
 	}
 

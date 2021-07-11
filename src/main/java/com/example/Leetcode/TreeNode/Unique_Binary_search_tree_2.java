@@ -86,7 +86,7 @@ public class Unique_Binary_search_tree_2 {
 		 * tree.root.left.right = new TreeNode(5);
 		 */
 
-		List<TreeNode> res = generateTrees(2);
+		List<TreeNode> res = generateTrees(3);
 		for (int i = 0; i < res.size(); i++) {
 			preorder(res.get(i));
 			System.out.println();

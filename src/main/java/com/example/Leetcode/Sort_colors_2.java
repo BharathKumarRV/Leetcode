@@ -7,7 +7,7 @@ public class Sort_colors_2 {
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
 		int A[] = { 2, 0, 2, 1, 1, 0 };
-		sortColors2(A);
+		sortColors(A);
 		for (int i = 0; i < A.length; i++) {
 			System.out.print(A[i]);
 		}

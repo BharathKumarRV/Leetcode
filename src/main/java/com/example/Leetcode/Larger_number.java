@@ -26,7 +26,7 @@ public class Larger_number {
 			public int compare(String str1, String str2) {
 				String s1 = str1 + str2;
 				String s2 = str2 + str1;
-				return s1.compareTo(s2); // reverse order here, so we can do append() later
+				return s2.compareTo(s1); // reverse order here, so we can do append() later
 			}
 		};
 

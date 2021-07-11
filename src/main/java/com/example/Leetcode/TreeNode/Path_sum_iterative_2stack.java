@@ -1,5 +1,7 @@
 package com.example.Leetcode.TreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Path_sum_iterative_2stack {
@@ -41,6 +43,29 @@ public class Path_sum_iterative_2stack {
 
         }
         return false;
+    }
+	
+	public static boolean hasPathSum_2(TreeNode root, int sum) {
+        if(root==null){
+            return false;
+        }
+        Queue <TreeNode> stack = new LinkedList();	    
+	    stack.offer(root) ;	    
+	    while (!stack.isEmpty()){
+	    	TreeNode cur = stack.poll() ;	
+	    	if (cur.left == null && cur.right == null){	    		
+	    		if (cur.val == sum ) return true ;
+	    	}
+	    	if (cur.right != null) {
+	    		cur.right.val = cur.val + cur.right.val ;
+	    		stack.offer(cur.right) ;
+	    	}
+	    	if (cur.left != null) {
+	    		cur.left.val = cur.val + cur.left.val;
+	    		stack.offer(cur.left);
+	    	}
+	    }	    
+	    return false ;
     }
 	
 	

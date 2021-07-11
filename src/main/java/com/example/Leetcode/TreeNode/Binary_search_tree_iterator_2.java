@@ -29,13 +29,19 @@ public class Binary_search_tree_iterator_2 {
 	private Stack<TreeNode> stack = new Stack<TreeNode>();
 
 	public Binary_search_tree_iterator_2(TreeNode root) {
-		pushAll(root);
+		partialInorder(root);
 	}
 
 	public Binary_search_tree_iterator_2() {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void partialInorder(TreeNode root) {
+		while(root!=null) {
+			stack.push(root);
+			root=root.left;
+		}
+	}
 	/** @return whether we have a next smallest number */
 	public boolean hasNext() {
 		return !stack.isEmpty();
@@ -43,16 +49,9 @@ public class Binary_search_tree_iterator_2 {
 
 	/** @return the next smallest number */
 	public int next() {
-		TreeNode tmpNode = stack.pop();
-		pushAll(tmpNode.right);
-		return tmpNode.val;
-	}
-
-	private void pushAll(TreeNode node) {
-		while(node!=null) {
-			stack.push(node);
-			node=node.left;
-		}
+		TreeNode top = stack.pop();
+		partialInorder(top.right);
+		return top.val;
 	}
 
 	public static void main(String args[]) {
@@ -60,8 +59,8 @@ public class Binary_search_tree_iterator_2 {
 		tree.root = new TreeNode(7);
 		tree.root.left = new TreeNode(3);
 		tree.root.right = new TreeNode(15);
-		tree.root.right.left = new TreeNode(9);
-		tree.root.right.right = new TreeNode(20);
+		tree.root.left.left = new TreeNode(9);
+		tree.root.left.right = new TreeNode(20);
 		Binary_search_tree_iterator_2 tree1 = new Binary_search_tree_iterator_2(tree.root);
 		int res = tree1.next();
 		System.out.println(res);

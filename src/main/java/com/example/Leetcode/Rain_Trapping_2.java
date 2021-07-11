@@ -34,4 +34,32 @@ public class Rain_Trapping_2 {
 		return max;
 
 	}
+
+	public static int trap_2(int[] A) {
+
+		int left = 0;
+		int right = A.length - 1;
+		int max = 0;
+		int leftmax = 0;
+		int rightmax = 0;
+		while (left <= right) {
+			if (leftmax <= rightmax) {
+				if (A[left] >= leftmax) { // leftmax is smaller than rightmax, so the (leftmax-A[a]) water can be stored
+					leftmax = A[left];
+				} else {
+					max += leftmax - A[left];
+				}
+				left++;
+			} else {
+				if (A[right] >= rightmax) {
+					rightmax = A[right];
+				} else {
+					max += rightmax - A[right];
+				}
+				right--;
+			}
+		}
+		return max;
+
+	}
 }

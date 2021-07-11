@@ -13,7 +13,8 @@ public class LRU_cache_2 {
 
 	public static int get(int key) {
 	    if(map.containsKey(key)) {
-	        int value = map.remove(key);
+	        int value = map.get(key);
+	        map.remove(key);
 	        map.put(key, value);
 	        return value;
 	    }

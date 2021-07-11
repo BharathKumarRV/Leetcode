@@ -32,11 +32,13 @@ public class Reverse_words {
 		int i = 0, j = 0;
 
 		while (i < n) {
-			while (i < j || i < n && a[i] == ' ')
+			while (i < n && a[i] == ' ')
 				i++; // skip spaces
-			while (j < i || j < n && a[j] != ' ')
+			j=i+1;
+			while (j < n && a[j] != ' ')
 				j++; // skip non spaces
 			reverse(a, i, j - 1); // reverse the word
+			i=j+1;
 		}
 	}
 
@@ -49,8 +51,9 @@ public class Reverse_words {
 				j++; // skip spaces
 			while (j < n && a[j] != ' ')
 				a[i++] = a[j++]; // keep non spaces
-			while (j < n && a[j] == ' ')
-				j++; // skip spaces
+			/*
+			 * while (j < n && a[j] == ' ') j++; // skip spaces
+			 */			
 			if (j < n)
 				a[i++] = ' '; // keep only one space
 		}
