@@ -48,12 +48,12 @@ public class Sub_set_sum_min_dp {
          
         // Find the largest j such that dp[n][j]
         // is true where j loops from sum/2 t0 0
-        for (int s1 = sum / 2; s1 >= 0; s1--)
+        for (int s1 = sum / 2; s1 >= 0; s1--) //only till half way as we need positive difference
         {
             // Find the
             if (dp[n][s1] == true)
             {
-                diff = sum - 2 * s1;
+                diff = sum - 2 * s1; 
                 break;
             }
         }

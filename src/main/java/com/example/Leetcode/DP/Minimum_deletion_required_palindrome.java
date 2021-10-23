@@ -14,6 +14,9 @@ public class Minimum_deletion_required_palindrome {
 		System.out.println("Minimum deletion required for Palindromic Subsequence is"+res);
 	}
 
+	//Minimum deletion required is inversely proportional to longest palindromic subsequence
+	//so find LPS and subtract length of LPS from total string length to get answer.
+	//This is same as minimum insertion to make a palindrome
 	static int lcs_2(char[] X, int m) {
 		int dp[][] = new int[m][m];
 

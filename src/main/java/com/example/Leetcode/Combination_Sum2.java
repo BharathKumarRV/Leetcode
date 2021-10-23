@@ -35,13 +35,17 @@ public class Combination_Sum2 {
 			if (nums[i] > target) {
 				return;
 			}
-			if (i > cur && nums[i] == nums[i - 1]) {
-				System.out.println("skipping");
-				continue;
-			}
+			/*
+			 * if (i > cur && nums[i] == nums[i - 1]) { System.out.println("skipping");
+			 * continue; }
+			 */
 			path.add(nums[i]);
 			dfs_com(nums, i + 1, target - nums[i], path, res);
 			path.remove(path.size() - 1);
+
+			if ((i + 1) < nums.length - 1 && nums[i] == nums[i + 1]) {
+				i++;
+			}
 		}
 	}
 }

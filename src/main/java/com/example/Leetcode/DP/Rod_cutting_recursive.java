@@ -21,7 +21,7 @@ public class Rod_cutting_recursive {
 		// (2) not included
 
 		if (N[n - 1] <= L) {
-			return max(val[n - 1] + rodcutting(L - N[n - 1], N, val, n - 1), rodcutting(L, N, val, n - 1));
+			return max(val[n - 1] + rodcutting(L - N[n - 1], N, val, n), rodcutting(L, N, val, n - 1));
 		}
 
 		// If weight of the nth item is

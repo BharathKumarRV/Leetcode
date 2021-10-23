@@ -10,7 +10,7 @@ public class Pascals_recursive {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		List<List<Integer>> res = generate(5);
+		List<List<Integer>> res = generate(3);
 		System.out.print(res);
 
 	}

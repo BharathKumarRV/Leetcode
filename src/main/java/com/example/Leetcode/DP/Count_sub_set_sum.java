@@ -25,8 +25,8 @@ public class Count_sub_set_sum {
 
 	/* Driver code */
 	public static void main(String args[]) {
-		int set[] = { 1, 2, 3, 3 };
-		int sum = 6;
+		int set[] = { 1, 2, 3};
+		int sum = 3;
 		int n = set.length;
 		System.out.println("Subset count sum" + isSubsetSum(set, n, sum));
 	}

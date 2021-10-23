@@ -23,7 +23,7 @@ public class Rod_cutting_memo {
 			return dp[n][L];
 
 		if (N[n - 1] <= L) {
-			return dp[n][L] = max(val[n - 1] + rodCuttingRec(L - N[n - 1], N, val, n - 1, dp),
+			return dp[n][L] = max(val[n - 1] + rodCuttingRec(L - N[n - 1], N, val, n, dp),
 					rodCuttingRec(L, N, val, n - 1, dp));
 		}
 

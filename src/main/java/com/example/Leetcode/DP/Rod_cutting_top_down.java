@@ -20,7 +20,7 @@ public class Rod_cutting_top_down {
 					if (i == 0 || j == 0)
 						dp[i][j] = 0;
 					else if (N[i - 1] <= j)
-						dp[i][j] = max(val[i - 1] + dp[i - 1][j - N[i - 1]], dp[i - 1][j]);
+						dp[i][j] = max(val[i - 1] + dp[i][j - N[i - 1]], dp[i - 1][j]);
 					else
 						dp[i][j] = dp[i - 1][j];
 				}

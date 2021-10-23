@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Matrix_chain_multiplication_bottom_up {
 
-	static int[][] dp = new int[100][100];
+	static int[][] dp = new int[6][6];
 
 	// Function for matrix chain multiplication
 	static int matrixChainMemoised(int[] p, int i, int j) {

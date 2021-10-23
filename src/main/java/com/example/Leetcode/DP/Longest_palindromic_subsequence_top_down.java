@@ -35,6 +35,7 @@ public class Longest_palindromic_subsequence_top_down {
 		return L[m][n];
 	}
 
+	//Longest palindromic subsequence= LCS(String a and reverse of String b)
 	static int lcs_2(char[] X, char[] Y, int m, int n) {
 		int dp[][] = new int[m][m];
 

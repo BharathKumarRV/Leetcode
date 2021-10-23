@@ -12,16 +12,19 @@ public class Word_break_4 {
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
 		int[] nums = { 4, 1, 2, 1, 2 };
-		// String s = "catsanddog";
-		// Set<String> dict = new HashSet<>();
-		String s = "leetcode";
-		List<String> dict = new ArrayList<>();
-		dict.add("leet");
-		dict.add("code");
-		/*
-		 * dict.add("cat"); dict.add("cats"); dict.add("and"); dict.add("sand");
-		 * dict.add("dog");
-		 */
+		String s = "catsanddog";
+		//Set<String> dict = new HashSet<>();
+		// String s = "leetcode";
+		 List<String> dict = new ArrayList<>();
+		// dict.add("leet");
+		// dict.add("code");
+
+		dict.add("cat");
+		dict.add("cats");
+		dict.add("and");
+		dict.add("sand");
+		dict.add("dog");
+
 		boolean res = wordBreak(s, dict);
 		System.out.println(res);
 
