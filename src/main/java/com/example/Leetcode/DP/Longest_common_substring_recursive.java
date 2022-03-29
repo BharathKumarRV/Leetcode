@@ -20,9 +20,9 @@ public class Longest_common_substring_recursive {
 		 * n = X.length(); m = Y.length();
 		 */
 
-		System.out.println(lcs(n, m, 0));
+		//System.out.println(lcs(n, m, 0));
 
-		//System.out.println(lcs(0, 0, 0));
+		System.out.println(lcs_3(0, 0, 0));
 	}
 
 	public static int lcs(int i, int j, int count) {

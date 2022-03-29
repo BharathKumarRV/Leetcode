@@ -15,7 +15,7 @@ public class Egg_dropping_recursive {
 
 		// We need k trials for one egg
 		// and k floors
-		if (n == 1)
+		if (n == 1) //zero egg is invalid
 			return k;
 
 		int min = Integer.MAX_VALUE;

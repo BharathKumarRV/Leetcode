@@ -55,6 +55,18 @@ public class Remove_linked_list_elements {
 		return head.val == val ? head.next : head;
 	}
 
+	public static ListNode removeElements_2(ListNode head, int val) {
+		 while (head != null && head.val == val)
+				head = head.next;
+			ListNode curr = head;
+			while (curr != null && curr.next != null)
+				if (curr.next.val == val)
+					curr.next = curr.next.next;
+				else
+					curr = curr.next;
+			return head;
+	}
+
 	public static void main(String[] args) {
 		/* Start with the empty list. */
 		Remove_linked_list_elements list = new Remove_linked_list_elements();
@@ -66,7 +78,7 @@ public class Remove_linked_list_elements {
 		list = insert(list, 1);
 		// printList(list);
 		ListNode head = list.head;
-		ListNode res = removeElements(head, 1);
+		ListNode res = removeElements_2(head, 1);
 		// printList(list);
 	}
 

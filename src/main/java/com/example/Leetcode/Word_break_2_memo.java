@@ -26,7 +26,7 @@ public class Word_break_2_memo {
 		List<String> dict2 = new ArrayList<>();
 		dict2.add("leet");
 		dict2.add("code");
-		List<String> res = wordBreak(s, dict);
+		List<String> res = wordBreak_2(s, dict);
 		System.out.println(res);
 
 	}
@@ -59,7 +59,7 @@ public class Word_break_2_memo {
 		for (int i = 1; i <= s.length(); i++) {
 			String left = s.substring(0, i);
 			if (wordDict.contains(left)) {
-				for (String ss : wordBreak(s.substring(i), wordDict)) {
+				for (String ss : wordBreak_2(s.substring(i), wordDict)) {
 					result.add(left + " " + ss);
 				}
 			}

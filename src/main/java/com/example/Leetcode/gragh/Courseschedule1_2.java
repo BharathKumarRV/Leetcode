@@ -1,11 +1,13 @@
 package com.example.Leetcode.gragh;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import com.example.Leetcode.gragh.Clone_graph.Node;
-
-public class Courseschedule {
+public class Courseschedule1_2 {
 
 	public static void main(String args[]) {
 		int prerrequisites[][] = { { 0, 1 }, { 0, 2 }, { 1, 3 }, { 1, 4 }, { 3, 4 } };
@@ -16,33 +18,38 @@ public class Courseschedule {
 
 	public static boolean canFinish(int numCourses, int[][] prerequisites) {
 		ArrayList<Integer> adj[] = new ArrayList[numCourses];
+		Map<Integer, List<Integer>> map = new HashMap<>();
 		for (int i = 0; i < numCourses; i++)
 			adj[i] = new ArrayList();
 
 		for (int pre[] : prerequisites) {
 			adj[pre[0]].add(pre[1]);
 		}
-		int[] visited = new int[numCourses];
 
 		for (int i = 0; i < numCourses; i++) {
-			if (visited[i] == 0 && !dfs(adj, visited, i))
+			map.put(i, adj[i]);
+		}
+		Set<Integer> visit = new HashSet<Integer>();
+
+		for (int i = 0; i < numCourses; i++) {
+			if (!dfs(map, visit, i))
 				return false;
 		}
 		return true;
 	}
 
-	private static boolean dfs(ArrayList<Integer>[] adj, int[] visited, int v) {
-		if (visited[v] == 1)
+	private static boolean dfs(Map<Integer, List<Integer>> map, Set<Integer> visit, int v) {
+		if (visit.contains(v))
 			return false;
-		if (visited[v] == 2)
+		if (map.get(v).isEmpty())
 			return true;
-		visited[v] = 1;
-
-		for (int ad : adj[v]) {
-			if (!dfs(adj, visited, ad))
+		visit.add(v);
+		for (Integer ad : map.get(v)) {
+			if (!dfs(map, visit, ad))
 				return false;
 		}
-		visited[v] = 2;
+		visit.remove(v);
+		map.remove(v);
 		return true;
 	}
 }

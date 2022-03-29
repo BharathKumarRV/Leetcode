@@ -83,6 +83,31 @@ public class Insertion_sortlist {
         return start.next;
     }
 	
+	 public static ListNode insertionSortList_3(ListNode head) {
+	        ListNode dummy=new ListNode(0);
+	        ListNode cur=head;
+	        
+	        while(cur!=null){
+	            ListNode prev=dummy;
+	            ListNode next=dummy.next;
+	            
+	            while(next!=null){
+	                if(cur.val<next.val){
+	                    break;
+	                }
+	                prev=prev.next;
+	                next=next.next;
+	            }
+	            
+	            ListNode temp=cur.next;
+	            cur.next=next;
+	            prev.next=cur;
+	            cur=temp;
+	        }
+	        
+	        return dummy.next;
+	    }
+	
 	public static void main(String[] args) {
 		/* Start with the empty list. */
 		// LRU_cache list = new LRU_cache();
@@ -92,7 +117,7 @@ public class Insertion_sortlist {
 		list=insert(list,3);
 		list=insert(list,4);
 		list=insert(list,0);
-		ListNode res=insertionSortList(list.head);
+		ListNode res=insertionSortList_3(list.head);
 		System.out.println(res);
 
 	}
