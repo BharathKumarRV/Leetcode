@@ -1,7 +1,5 @@
 package com.example.Leetcode.TreeNode;
 
-import com.example.Leetcode.TreeNode.Validate_Binary_search_tree.TreeNode;
-
 public class Lowest_common_ancestor_BST {
 
 	TreeNode root;
@@ -26,12 +24,16 @@ public class Lowest_common_ancestor_BST {
 		}
 	}
 
-	/*
-	 * public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p,
-	 * TreeNode q) { while (true) { if (root.val > p.val && root.val > q.val) root =
-	 * root.left; else if (root.val < p.val && root.val < q.val) root = root.right;
-	 * else return root; } }
-	 */
+	public static TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+		while (true) {
+			if (root.val > p.val && root.val > q.val)
+				root = root.left;
+			else if (root.val < p.val && root.val < q.val)
+				root = root.right;
+			else
+				return root;
+		}
+	}
 
 	public static void main(String args[]) {
 

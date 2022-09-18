@@ -8,7 +8,7 @@ public class Basic_calculator_parenthesis {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = calculate("1+(4+5+2)-3");
+		int res = calculate("10-1+(4+5+2)-3");
 		System.out.println(res);
 	}
 

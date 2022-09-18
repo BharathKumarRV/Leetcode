@@ -13,10 +13,22 @@ public class Bitwise_numbers_range {
 		}
 		return m << i;
 	}
+	
+	 public static int rangeBitwiseAnd_2(int m, int n) {
+	        if(m==0) return 0;
+	        int and =m;
+
+	        for(int i=m;i<=n;i++){
+	            and&=i;
+	            if(i==Integer.MAX_VALUE) break;
+	            if(and==0) return 0;
+	        }
+	        return and;
+	    }
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int res = rangeBitwiseAnd(26,30);
+		int res = rangeBitwiseAnd_2(5,7);
 		System.out.println(res);
 
 	}

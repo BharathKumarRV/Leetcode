@@ -76,19 +76,25 @@ public class Linkedlist_intersection {
 		// Linkedlist_intersection list1 = new Linkedlist_intersection();
 
 		// creating first linked list
-		list.head1 = new ListNode(4);
-		list.head1.next = new ListNode(1);
-		list.head1.next.next = new ListNode(8);
-		list.head1.next.next.next = new ListNode(4);
-		list.head1.next.next.next.next = new ListNode(5);
-
+		/*
+		 * list.head1 = new ListNode(4); list.head1.next = new ListNode(1);
+		 * list.head1.next.next = new ListNode(8); list.head1.next.next.next = new
+		 * ListNode(4); list.head1.next.next.next.next = new ListNode(5);
+		 * 
+		 * // creating second linked list list.head2 = new ListNode(5); list.head2.next
+		 * = new ListNode(0); list.head2.next.next = new ListNode(1);
+		 * list.head2.next.next.next = new ListNode(8); list.head2.next.next.next.next =
+		 * new ListNode(4); list.head2.next.next.next.next.next = new ListNode(5);
+		 */
+		
+		list.head1 = new ListNode(2);
+		list.head1.next = new ListNode(6);
+		list.head1.next.next = new ListNode(4);
+		
 		// creating second linked list
-		list.head2 = new ListNode(5);
-		list.head2.next = new ListNode(0);
-		list.head2.next.next = new ListNode(1);
-		list.head2.next.next.next = new ListNode(8);
-		list.head2.next.next.next.next = new ListNode(4);
-		list.head2.next.next.next.next.next = new ListNode(5);
+		list.head2 = new ListNode(1);
+		list.head2.next = new ListNode(5);
+		
 
 		// Print the LinkedList
 		ListNode res = getIntersectionNode_2(list.head1, list.head2);

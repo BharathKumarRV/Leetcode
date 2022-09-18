@@ -11,7 +11,7 @@ public class Contains_duplicates_2 {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeetcodeApplication.class, args);
-		int nums[] = { 1, 0, 1, 1 };
+		int nums[] = { 1,0,1,1};
 		boolean res = containsNearbyDuplicate(nums, 1);
 		System.out.println(res);
 

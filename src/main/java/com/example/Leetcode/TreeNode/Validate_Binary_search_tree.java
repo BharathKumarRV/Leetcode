@@ -55,17 +55,30 @@ public class Validate_Binary_search_tree {
 		return true;
 
 	}
+	
+	private static boolean checkBST(TreeNode node, long min, long max) {
+        if(node == null) return true; 
+        if(node.val <= min || node.val >= max) return false; 
+        
+        if(checkBST(node.left, min, node.val) && checkBST(node.right, node.val, max)) {
+            return true; 
+        }
+        return false; 
+    }
+    public static boolean isValidBST2(TreeNode root) {
+        return checkBST(root, Long.MIN_VALUE, Long.MAX_VALUE); 
+    }
 
 	public static void main(String args[]) {
 
 		Validate_Binary_search_tree tree = new Validate_Binary_search_tree();
 		tree.root = new TreeNode(2);
-		tree.root.left = new TreeNode(1);
+		tree.root.left = new TreeNode(4);
 		tree.root.right = new TreeNode(3);
 		// tree.root.left.left = new TreeNode(4);
 		// tree.root.left.right = new TreeNode(5);
 		//boolean res = isValidBST(tree.root);
-		boolean res = isValidBST_recursive(tree.root);
+		boolean res = isValidBST2(tree.root);
 		System.out.println(res);
 	}
 }

@@ -44,6 +44,8 @@ public class Kth_smallest_BST {
 		/*
 		 * creating a binary tree and entering the nodes
 		 */
+		
+		//For kth largest find N and get (N-k)th node.
 		Kth_smallest_BST tree = new Kth_smallest_BST();
 		tree.root = new TreeNode(3);
 		tree.root.left = new TreeNode(1);

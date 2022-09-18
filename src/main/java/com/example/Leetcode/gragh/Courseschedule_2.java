@@ -7,8 +7,8 @@ import java.util.List;
 public class Courseschedule_2 {
 
 	public static void main(String args[]) {
-		int prerrequisites[][] = { { 1, 0 }, { 2, 0 }, { 3, 1 }, { 3, 2 } };
-		int[] res = findOrder(4, prerrequisites);
+		int prerrequisites[][] = { { 1, 0 }, { 2, 0 }, { 2, 1 } };
+		int[] res = findOrder(3, prerrequisites);
 		for (int i : res) {
 			System.out.print(i + " ");
 		}

@@ -19,7 +19,7 @@ public class Word_search_matrix {
 
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board[i].length; j++) {
-				if ((word.charAt(0) == board[i][j]) && search_2(board, i, j, word, 0)) {
+				if ((word.charAt(0) == board[i][j]) && search_2(board, i, j, word, 0)) { 
 					return true;
 				}
 			}

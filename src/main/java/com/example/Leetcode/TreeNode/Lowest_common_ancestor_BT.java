@@ -59,7 +59,7 @@ public class Lowest_common_ancestor_BT {
 		tree.root.right = new TreeNode(1);
 		tree.root.right.left = new TreeNode(0);
 		tree.root.right.right = new TreeNode(8);
-		TreeNode res = lowestCommonAncestor(tree.root, tree.root.left.right.left, tree.root.left.right.right);
+		TreeNode res = lowestCommonAncestor(tree.root, tree.root.left, tree.root.left.right.right);
 		System.out.println(res);
 	}
 }
